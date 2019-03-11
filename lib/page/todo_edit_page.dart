@@ -31,12 +31,6 @@ class _TodoEditPageState extends State<TodoEditPage> {
   }
 
   @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
-  @override
   Widget build(BuildContext context) {
     var controller1 =
         TextEditingController.fromValue(TextEditingValue(text: title));

@@ -5,6 +5,7 @@ import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
 class TodoListPage extends StatelessWidget {
+  ToDoState addToDoState = null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +22,22 @@ class TodoListPage extends StatelessWidget {
                   children: _getItem(todoListReducer.list),
                 );
               })),
-      floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) {
-              return TodoEditPage(item: ToDoState(),);
-            }));
+      floatingActionButton:
+      StoreConnector<AppState, VoidCallback>(
+          converter: (store) {
+            addToDoState = new ToDoState();
+            return () => store.dispatch(AddAction(todo: addToDoState));
+          },
+          builder: (context, callback) {
+            return FloatingActionButton(
+                child: Icon(Icons.add),
+                onPressed: () {
+                  callback();
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return TodoEditPage(item: addToDoState,);
+                  }));
+                });
           }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

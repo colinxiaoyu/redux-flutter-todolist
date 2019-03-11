@@ -49,27 +49,33 @@ class TodoList {
 class AddAction {
   ToDoState todo;
 
-  AddAction(this.todo);
+  AddAction({this.todo});
 }
 
 ///变更是否完成状态
 class ChangeAction {
   ToDoState todo;
-
   ChangeAction({this.todo});
 }
 
 class ChangeTitleAction {
   ToDoState todo;
-
   ChangeTitleAction({this.todo});
 }
+
+
 
 ///将对象与action 绑定
 final todoListReducer = combineReducers<TodoList>([
   TypedReducer<TodoList, ChangeAction>(_change),
   TypedReducer<TodoList, ChangeTitleAction>(_changeTitle),
+  TypedReducer<TodoList, AddAction>(_addTodo),
 ]);
+
+TodoList _addTodo(TodoList list, action) {
+  list.list.add(action.todo);
+  return TodoList(list: list.list);
+}
 
 ///变更 是否完成的状态
 TodoList _change(TodoList list, action) {
