@@ -8,27 +8,37 @@ class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: Text(
-          'MyToDoList',
-        )),
-        body: Container(
-            padding: EdgeInsets.all(10.0),
-            child: StoreConnector<AppState, TodoList>(
-                converter: (store) => store.state.todoList,
-                builder: (context, todoListReducer) {
-                  return Column(
-                    children: _getItem(todoListReducer.list),
-                  );
-                })));
+      appBar: AppBar(
+          title: Text(
+            'MyToDoList',
+          )),
+      body: Container(
+          padding: EdgeInsets.all(10.0),
+          child: StoreConnector<AppState, TodoList>(
+              converter: (store) => store.state.todoList,
+              builder: (context, todoListReducer) {
+                return Column(
+                  children: _getItem(todoListReducer.list),
+                );
+              })),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) {
+              return TodoEditPage(item: ToDoState(),);
+            }));
+          }),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 
   ///渲染标题
   Widget _getTitle(List<ToDoState> list) {
     int total = list.length;
     int done = 0;
-    list.forEach((item){
-      if(item.isDone){
+    list.forEach((item) {
+      if (item.isDone) {
         done++;
       }
     });

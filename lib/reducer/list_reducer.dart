@@ -7,7 +7,7 @@ class ToDoState {
   String desc;
   bool isDone;
 
-  ToDoState({this.uniqueId, this.title, this.desc, this.isDone = false}) {
+  ToDoState({this.uniqueId, this.title='', this.desc='', this.isDone = false}) {
     uniqueId ??= DateTime.now().toIso8601String();
   }
 

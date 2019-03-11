@@ -4,10 +4,12 @@ import 'package:redux/redux.dart';
 import 'package:redux_todolist/page/todo_list_page.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
-import 'package:redux_todolist/reducer/todo_reducer.dart';
 
-void main(){
-final store = Store<AppState>(appReducer,initialState: AppState(toDo: ToDo(),todoList: TodoList(list: TodoList.initToDos)));
+void main() {
+  final store = Store<AppState>(
+      appReducer,
+      initialState: AppState(
+          todoList: TodoList(list: TodoList.initToDos)));
   runApp(MyApp(store));
 }
 
