@@ -24,7 +24,14 @@ class TodoListPage extends StatelessWidget {
   }
 
   ///渲染标题
-  Widget _getTitle() {
+  Widget _getTitle(List<ToDoState> list) {
+    int total = list.length;
+    int done = 0;
+    list.forEach((item){
+      if(item.isDone){
+        done++;
+      }
+    });
     return Container(
       color: Colors.blue,
       padding: EdgeInsets.all(5.0),
@@ -36,7 +43,7 @@ class TodoListPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: 10.0),
-            child: Text('Total 3 tasks,2 done',
+            child: Text('Total $total tasks,$done done',
                 style: TextStyle(
                   color: Colors.white,
                 )),
@@ -49,7 +56,7 @@ class TodoListPage extends StatelessWidget {
   ///渲染每个Item
   List<Widget> _getItem(List<ToDoState> list) {
     List<Widget> newList = new List();
-    newList.add(_getTitle());
+    newList.add(_getTitle(list));
     list.forEach((item) {
       newList.add(Item(item));
     });
