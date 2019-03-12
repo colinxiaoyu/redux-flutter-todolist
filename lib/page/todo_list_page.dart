@@ -5,14 +5,14 @@ import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
 class TodoListPage extends StatelessWidget {
-  ToDoState addToDoState = null;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
           title: Text(
-            'MyToDoList',
-          )),
+        'MyToDoList',
+      )),
       body: Container(
           padding: EdgeInsets.all(10.0),
           child: StoreConnector<AppState, TodoList>(
@@ -22,22 +22,12 @@ class TodoListPage extends StatelessWidget {
                   children: _getItem(todoListReducer.list),
                 );
               })),
-      floatingActionButton:
-      StoreConnector<AppState, VoidCallback>(
-          converter: (store) {
-            addToDoState = new ToDoState();
-            return () => store.dispatch(AddAction(todo: addToDoState));
-          },
-          builder: (context, callback) {
-            return FloatingActionButton(
-                child: Icon(Icons.add),
-                onPressed: () {
-                  callback();
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return TodoEditPage(item: addToDoState,);
-                  }));
-                });
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return TodoEditPage();
+            }));
           }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
@@ -92,7 +82,6 @@ class Item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Column(
       children: <Widget>[
         Container(
@@ -143,7 +132,9 @@ class Item extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return TodoEditPage(item: item,);
+                    return TodoEditPage(
+                      item: item,
+                    );
                   }));
                 },
                 child: Icon(Icons.edit),

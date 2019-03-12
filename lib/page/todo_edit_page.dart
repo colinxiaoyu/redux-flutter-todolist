@@ -8,12 +8,18 @@ import 'package:redux_todolist/reducer/list_reducer.dart';
 class TodoEditPage extends StatefulWidget {
   final ToDoState item;
 
-  const TodoEditPage({Key key, this.item});
+  const TodoEditPage({Key key, this.item}) : super(key: key);
+
 
   @override
   _TodoEditPageState createState() {
-    // TODO: implement createState
-    return _TodoEditPageState(item: item);
+    if(item == null){
+      return _TodoEditPageState(item: ToDoState());
+    }else{
+      return _TodoEditPageState(item: item);
+    }
+
+
   }
 }
 
@@ -42,7 +48,12 @@ class _TodoEditPageState extends State<TodoEditPage> {
         TextEditingController.fromValue(TextEditingValue(text: desc));
 
     return Scaffold(
-      appBar: AppBar(title: Text('MyToDo'), leading: CustomLeading(title: title,desc: desc,)),
+      appBar: AppBar(
+          title: Text('MyToDo'),
+          leading: CustomLeading(
+            title: title,
+            desc: desc,
+          )),
       body: Container(
         padding: EdgeInsets.all(5.0),
         child: Column(

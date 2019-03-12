@@ -45,12 +45,6 @@ class TodoList {
   TodoList({this.list});
 }
 
-///定义Action
-class AddAction {
-  ToDoState todo;
-
-  AddAction({this.todo});
-}
 
 ///变更是否完成状态
 class ChangeAction {
@@ -69,13 +63,9 @@ class ChangeTitleAction {
 final todoListReducer = combineReducers<TodoList>([
   TypedReducer<TodoList, ChangeAction>(_change),
   TypedReducer<TodoList, ChangeTitleAction>(_changeTitle),
-  TypedReducer<TodoList, AddAction>(_addTodo),
 ]);
 
-TodoList _addTodo(TodoList list, action) {
-  list.list.add(action.todo);
-  return TodoList(list: list.list);
-}
+
 
 ///变更 是否完成的状态
 TodoList _change(TodoList list, action) {
@@ -87,14 +77,18 @@ TodoList _change(TodoList list, action) {
   return TodoList(list: list.list);
 }
 
-///变更 填写的title 和 desc
+///变更 填写的title 和 desc,如果是新建的item 则在队尾重新创建item
 TodoList _changeTitle(TodoList list, action) {
-  print('_changeTitle:' + action.todo.title);
+  bool hasUniqueId = true;
   list.list.forEach((item) {
     if (item.uniqueId == action.todo.uniqueId) {
       item.title = action.todo.title;
       item.desc = action.todo.desc;
+      hasUniqueId=false;
     }
   });
+  if(hasUniqueId){
+    list.list.add(action.todo);
+  }
   return TodoList(list: list.list);
 }
