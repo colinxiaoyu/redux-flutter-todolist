@@ -2,7 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux_todolist/page/animated_container_demo.dart';
+import 'package:redux_todolist/page/animated/animated_container_demo.dart';
+import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
@@ -167,11 +168,16 @@ class _TodoEditPageState extends State<TodoEditPage> {
   }
 
   void _toDo(String todo) {
+
+     Future push(Widget widget)=> Navigator.push(context,
+        MaterialPageRoute(builder: (context) => widget));
+
     switch (todo){
       case 'AnimatedContainerDemo':
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-          return AnimatedContainerDemo();
-        }));
+        push(AnimatedContainerDemo());
+        break;
+      case 'AnimatedCrossFadeDemo':
+        push(AnimatedCrossFadeDemo());
         break;
       default:
         break;

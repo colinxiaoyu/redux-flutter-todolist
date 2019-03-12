@@ -8,7 +8,12 @@ class ToDoState {
   bool isDone;
   String todo;
 
-  ToDoState({this.uniqueId, this.title='', this.desc='', this.isDone = false,this.todo='Do noting'}) {
+  ToDoState(
+      {this.uniqueId,
+      this.title = '',
+      this.desc = '',
+      this.isDone = false,
+      this.todo = 'Do noting'}) {
     uniqueId ??= DateTime.now().toIso8601String();
   }
 
@@ -28,13 +33,14 @@ class TodoList {
       title: 'AnimatedContainer',
       desc: '基础动画',
       isDone: true,
-      todo: 'AnimatedContainerDemo',
+      todo: '改变宽度和高度',
     ),
     ToDoState(
       uniqueId: '1',
-      title: 'Hello Flutter',
-      desc: 'Learn how to build a flutter application.',
+      title: 'AnimatedCrossFadeDemo',
+      desc: '两个组件 交叉 淡入淡出',
       isDone: true,
+      todo: 'AnimatedCrossFadeDemo',
     ),
     ToDoState(
       uniqueId: '2',
@@ -47,27 +53,24 @@ class TodoList {
   TodoList({this.list});
 }
 
-
 ///变更是否完成状态
 class ChangeAction {
   ToDoState todo;
+
   ChangeAction({this.todo});
 }
 
 class ChangeTitleAction {
   ToDoState todo;
+
   ChangeTitleAction({this.todo});
 }
-
-
 
 ///将对象与action 绑定
 final todoListReducer = combineReducers<TodoList>([
   TypedReducer<TodoList, ChangeAction>(_change),
   TypedReducer<TodoList, ChangeTitleAction>(_changeTitle),
 ]);
-
-
 
 ///变更 是否完成的状态
 TodoList _change(TodoList list, action) {
@@ -86,10 +89,10 @@ TodoList _changeTitle(TodoList list, action) {
     if (item.uniqueId == action.todo.uniqueId) {
       item.title = action.todo.title;
       item.desc = action.todo.desc;
-      hasUniqueId=false;
+      hasUniqueId = false;
     }
   });
-  if(hasUniqueId){
+  if (hasUniqueId) {
     list.list.add(action.todo);
   }
   return TodoList(list: list.list);
