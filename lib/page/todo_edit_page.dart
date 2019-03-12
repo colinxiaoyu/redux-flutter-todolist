@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
 import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
+import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
@@ -123,7 +124,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
               ],
             ),
             RaisedButton(
-              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)),),
+              shape: BeveledRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
               textColor: Colors.white,
               color: Colors.blue,
               child: Row(
@@ -136,7 +139,6 @@ class _TodoEditPageState extends State<TodoEditPage> {
               onPressed: () {
                 _toDo(item.todo);
               },
-              
             )
           ],
         ),
@@ -168,16 +170,18 @@ class _TodoEditPageState extends State<TodoEditPage> {
   }
 
   void _toDo(String todo) {
+    Future push(Widget widget) => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => widget));
 
-     Future push(Widget widget)=> Navigator.push(context,
-        MaterialPageRoute(builder: (context) => widget));
-
-    switch (todo){
+    switch (todo) {
       case 'AnimatedContainerDemo':
         push(AnimatedContainerDemo());
         break;
       case 'AnimatedCrossFadeDemo':
         push(AnimatedCrossFadeDemo());
+        break;
+      case 'HideBottomBarDemo':
+        push(HideBottomBarDemo());
         break;
       default:
         break;

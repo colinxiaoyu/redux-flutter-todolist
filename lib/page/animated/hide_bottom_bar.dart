@@ -40,8 +40,54 @@ class _HideBottomBarDemoState extends State<HideBottomBarDemo>
   }
 
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+  void dispose() {
+    _animationController?.dispose();
+    _scrollController..removeListener(_judgeScroll);
+    super.dispose();
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Immersive BottomNavigationBar'),
+      ),
+      body: _buildListView(),
+      bottomNavigationBar: _buildBottomNavigationBar(context),
+    );
+  }
+
+  Widget _buildBottomNavigationBar(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Container(
+          height: 0.0,
+          child: Stack(
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Positioned(
+                  bottom: _animation.value, left: 0.0, right: 0.0, child: child)
+            ],
+          ),
+        );
+      },
+      child: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.title), title: Text("home")),
+          BottomNavigationBarItem(icon: Icon(Icons.title), title: Text("home")),
+          BottomNavigationBarItem(icon: Icon(Icons.title), title: Text("home")),
+          BottomNavigationBarItem(icon: Icon(Icons.title), title: Text("home")),
+        ],
+        type: BottomNavigationBarType.fixed,
+      ),
+    );
+  }
+
+  Widget _buildListView() => ListView.builder(
+      controller: _scrollController,
+      itemBuilder: (context, index) => ListTile(
+        leading: Icon(Icons.access_alarm),
+        title: Text("this is index: $index"),
+      ));
 }

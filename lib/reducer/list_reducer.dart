@@ -44,8 +44,9 @@ class TodoList {
     ),
     ToDoState(
       uniqueId: '2',
-      title: 'How Fish Redux',
-      desc: 'Learn how to use Fish Redux in a flutter application.',
+      title: 'HideBottomBarDemo',
+      desc: 'listview上下滑动时自动隐藏 底部',
+      todo: 'HideBottomBarDemo',
       isDone: false,
     )
   ];
