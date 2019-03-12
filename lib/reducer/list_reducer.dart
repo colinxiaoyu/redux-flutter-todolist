@@ -6,8 +6,9 @@ class ToDoState {
   String title;
   String desc;
   bool isDone;
+  String todo;
 
-  ToDoState({this.uniqueId, this.title='', this.desc='', this.isDone = false}) {
+  ToDoState({this.uniqueId, this.title='', this.desc='', this.isDone = false,this.todo='Do noting'}) {
     uniqueId ??= DateTime.now().toIso8601String();
   }
 
@@ -24,9 +25,10 @@ class TodoList {
   static List<ToDoState> initToDos = <ToDoState>[
     ToDoState(
       uniqueId: '0',
-      title: 'Hello world',
-      desc: 'Learn how to program.',
+      title: 'AnimatedContainer',
+      desc: '基础动画',
       isDone: true,
+      todo: 'AnimatedContainerDemo',
     ),
     ToDoState(
       uniqueId: '1',

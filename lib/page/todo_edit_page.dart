@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_todolist/page/animated_container_demo.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
@@ -119,6 +120,22 @@ class _TodoEditPageState extends State<TodoEditPage> {
                           onSubmitted: (text) => controller2.text = text,
                         )))
               ],
+            ),
+            RaisedButton(
+              shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)),),
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text(item.todo),
+                  Icon(Icons.keyboard_return),
+                ],
+              ),
+              onPressed: () {
+                _toDo(item.todo);
+              },
+              
             )
           ],
         ),
@@ -147,6 +164,18 @@ class _TodoEditPageState extends State<TodoEditPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  }
+
+  void _toDo(String todo) {
+    switch (todo){
+      case 'AnimatedContainerDemo':
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return AnimatedContainerDemo();
+        }));
+        break;
+      default:
+        break;
+    }
   }
 }
 
