@@ -7,7 +7,6 @@ import 'package:redux_todolist/reducer/list_reducer.dart';
 class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -15,13 +14,15 @@ class TodoListPage extends StatelessWidget {
       )),
       body: Container(
           padding: EdgeInsets.all(10.0),
-          child: StoreConnector<AppState, TodoList>(
-              converter: (store) => store.state.todoList,
-              builder: (context, todoListReducer) {
-                return Column(
-                  children: _getItem(todoListReducer.list),
-                );
-              })),
+          child: SingleChildScrollView(
+            child: StoreConnector<AppState, TodoList>(
+                converter: (store) => store.state.todoList,
+                builder: (context, todoListReducer) {
+                  return Column(
+                    children: _getItem(todoListReducer.list),
+                  );
+                }),
+          )),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: () {

@@ -135,6 +135,8 @@ class _TodoEditPageState extends State<TodoEditPage> {
                 Scaffold.of(context).showSnackBar(
                     SnackBar(content: Text('You should edit title and desc')));
                 return;
+              }else{
+                Navigator.of(context).pop();
               }
               callback();
             },
