@@ -10,16 +10,13 @@ class TodoEditPage extends StatefulWidget {
 
   const TodoEditPage({Key key, this.item}) : super(key: key);
 
-
   @override
   _TodoEditPageState createState() {
-    if(item == null){
+    if (item == null) {
       return _TodoEditPageState(item: ToDoState());
-    }else{
+    } else {
       return _TodoEditPageState(item: item);
     }
-
-
   }
 }
 
@@ -41,11 +38,15 @@ class _TodoEditPageState extends State<TodoEditPage> {
 
   @override
   Widget build(BuildContext context) {
-    var controller1 =
-        TextEditingController.fromValue(TextEditingValue(text: title));
+    var controller1 = TextEditingController.fromValue(TextEditingValue(
+        text: title,
+        selection: TextSelection.fromPosition(TextPosition(
+            affinity: TextAffinity.downstream, offset: title.length))));
 
-    var controller2 =
-        TextEditingController.fromValue(TextEditingValue(text: desc));
+    var controller2 = TextEditingController.fromValue(TextEditingValue(
+        text: desc,
+        selection: TextSelection.fromPosition(TextPosition(
+            affinity: TextAffinity.downstream, offset: desc.length))));
 
     return Scaffold(
       appBar: AppBar(
@@ -135,7 +136,7 @@ class _TodoEditPageState extends State<TodoEditPage> {
                 Scaffold.of(context).showSnackBar(
                     SnackBar(content: Text('You should edit title and desc')));
                 return;
-              }else{
+              } else {
                 Navigator.of(context).pop();
               }
               callback();
