@@ -11,34 +11,34 @@ import 'package:flutter/material.dart';
 
 class AnimatedContainerDemo extends StatefulWidget {
   @override
-  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
+  _AnimatedContainerDemoState createState() {
+    // TODO: implement createState
+    return _AnimatedContainerDemoState();
+  }
 }
 
 class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
-  double _value = 255.0;
-
-  _changeValue()=>setState(() {
-    _value = _value == 255.0 ? 80.0: 255.0;
-    print(_value);
-  });
+  double _value = 250.00;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('AnimatedContainerDemo'),),
+      appBar: AppBar(
+        title: Text('AnimatedContainerDemo'),
+      ),
       body: Center(
         child: GestureDetector(
-          onTap: _changeValue,
+          onTap: () => setState(() {
+                _value = _value == 250.00 ? 80.00 : 250.00;
+              }),
           child: AnimatedContainer(
-            curve: Curves.decelerate,
-            duration: Duration(seconds: 1),
-            width: _value,
-            height: _value,
-            child: FlutterLogo(),
-          ),
+              width: _value,
+              height: _value,
+              curve: Curves.bounceIn,
+              child: FlutterLogo(),
+              duration: Duration(seconds: 1)),
         ),
       ),
     );
   }
-
 }
