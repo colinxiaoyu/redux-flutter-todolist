@@ -52,12 +52,19 @@ class TodoList {
       isDone: true,
     ),
     ToDoState(
-      uniqueId: '1',
+      uniqueId: '3',
       title: 'HeroDemo',
       desc: '两个页面公用 一个 widget ，在切换页面时 widget 动态变化\n'
           'flutter 原生效果',
       isDone: true,
       todo: ['HeroDemo'],
+    ),
+    ToDoState(
+      uniqueId: '4',
+      title: 'AudioScreen',
+      desc: '用 Stopwatch 实现Audio 播放 暂停的功能',
+      isDone: false,
+      todo: ['AudioScreen'],
     ),
   ];
 
