@@ -49,6 +49,8 @@ class SecondScreen extends StatelessWidget {
               child: RaisedButton(
                 onPressed: () {},
                 color: Colors.red,
+                splashColor:Colors.blue,
+                highlightElevation:10.00,
                 child: Icon(
                   Icons.add,
                   color: Colors.white,

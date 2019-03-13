@@ -731,8 +731,64 @@ onVerticalDragUpdate：与屏幕接触并水平移动的指针在水平方向上
 onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与屏幕接触，并且当它停止接触屏幕时以特定速度移动
 
 
-### AnimationController extends Animation<double> with AnimationEagerListenerMixin, AnimationLocalListenersMixin, AnimationLocalStatusListenersMixin
+### MaterialButton
+- @required onPressed,
+- onHighlightChanged,
+- textTheme,
+- textColor,
+- disabledTextColor,
+- color,
+- disabledColor,
+- highlightColor,
+- splashColor:点击按钮时水波纹的颜色
+- colorBrightness : The theme brightness to use for this button. 没有特别大的作用
+- elevation,
+- highlightElevation： 点击时阴影
+- disabledElevation：禁用时阴影
+- padding,
+- shape（ShapeBorder）
+```
+BeveledRectangleBorder 带斜角的长方形边框
+CircleBorder 圆形边框
+RoundedRectangleBorder 圆角矩形
+StadiumBorder 两端是半圆的边框
+```
+- clipBehavior = Clip.none,
+- materialTapTargetSize：可点击范围
+- animationDuration ：Defines the duration of animated changes for [shape] and [elevation].
+- minWidth,
+- height,
+- child,
+#### RaisedButton 
+凸起的按钮，其实就是Android中的Material Design风格的Button ，继承自MaterialButton
+注意：Raised buttons have a minimum size of 88.0 by 36.0 which can be overidden with [ButtonTheme].
+```
+ButtonTheme(
+              height: 48.0,
+              minWidth: double.infinity,
+              child: RaisedButton(
+                onPressed: () {},
+                color: Colors.red,
+                splashColor:Colors.blue,
+                highlightElevation:10.00,
+                child: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+```
+#### FlatButton 
+扁平化的按钮，继承自MaterialButton
+#### OutlineButton
+带边框的按钮，继承自MaterialButton
+#### IconButton	
+图标按钮,继承自StatelessWidget
 
+
+
+### AnimationController extends Animation<double> with AnimationEagerListenerMixin, AnimationLocalListenersMixin, AnimationLocalStatusListenersMixin
+https://www.jianshu.com/p/0a40e04ab9fa 源码分析 讲的不错
 
 ### AnimatedBuilder extends 
 `AnimatedWidget > StatefulWidget`
