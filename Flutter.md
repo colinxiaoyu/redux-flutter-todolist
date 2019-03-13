@@ -736,7 +736,7 @@ onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与�
 
 ### AnimatedBuilder extends 
 `AnimatedWidget > StatefulWidget`
-A general-purpose widget for building animations.
+A general-purpose widget for building animations.注意在 widget 生命周期结束时销毁
 - Listenable animation：动画控制器，控制动画如何执行
 ```
 AnimationController(

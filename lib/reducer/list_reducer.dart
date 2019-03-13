@@ -49,8 +49,16 @@ class TodoList {
         '需要掌握 AnimatedBuilder Animation.animate 等动画\n'
           '官网例子 Spinner',
       todo: ['HideBottomBarDemo','SpinnerDemo'],
-      isDone: false,
-    )
+      isDone: true,
+    ),
+    ToDoState(
+      uniqueId: '1',
+      title: 'HeroDemo',
+      desc: '两个页面公用 一个 widget ，在切换页面时 widget 动态变化\n'
+          'flutter 原生效果',
+      isDone: true,
+      todo: ['HeroDemo'],
+    ),
   ];
 
   TodoList({this.list});
