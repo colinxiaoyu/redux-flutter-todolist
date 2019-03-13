@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
 import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
@@ -190,6 +191,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'HideBottomBarDemo':
         push(HideBottomBarDemo());
+        break;
+      case 'SpinnerDemo':
+        push(SpinnerDemo());
         break;
       default:
         break;

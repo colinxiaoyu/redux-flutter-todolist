@@ -46,8 +46,9 @@ class TodoList {
       uniqueId: '2',
       title: '重点HideBottomBarDemo',
       desc: 'listview上下滑动时自动隐藏 底部 \n'
-        '需要掌握 AnimatedBuilder Animation.animate 等动画',
-      todo: ['HideBottomBarDemo'],
+        '需要掌握 AnimatedBuilder Animation.animate 等动画\n'
+          '官网例子 Spinner',
+      todo: ['HideBottomBarDemo','SpinnerDemo'],
       isDone: false,
     )
   ];
