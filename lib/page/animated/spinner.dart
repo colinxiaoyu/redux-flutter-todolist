@@ -3,6 +3,10 @@ import "dart:math";
 
 import 'package:redux_todolist/page/general_page.dart';
 
+/// 几个要点
+/// 1、需注入 SingleTickerProviderStateMixin 单个动画钩子，注意 state 只作用于一个 AnimationController
+///
+
 class SpinnerDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

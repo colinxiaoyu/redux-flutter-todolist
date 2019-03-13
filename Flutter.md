@@ -737,6 +737,25 @@ onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与�
 ### AnimatedBuilder extends 
 `AnimatedWidget > StatefulWidget`
 A general-purpose widget for building animations.
+- Listenable animation：动画控制器，控制动画如何执行
+```
+AnimationController(
+      duration: const Duration(seconds: 10),
+      vsync: this,
+    )..repeat()
+```
+或者
+```
+_animationController = AnimationController(
+        duration: Duration(microseconds: 300), vsync: this);
+    _animation = Tween(begin: 0.0, end: -100.00)
+        .animate(
+        CurvedAnimation(parent: _animationController,
+            curve: Curves.fastOutSlowIn));
+```
+- @required (TransitionBuilder)builder：builder(context, child):
+Called every time the animation changes value.每一帧动画重新调用
+- child:供 builder 方法调用，描述 builder 内部组件
 
  
 
