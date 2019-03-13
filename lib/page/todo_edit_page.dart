@@ -123,22 +123,30 @@ class _TodoEditPageState extends State<TodoEditPage> {
                         )))
               ],
             ),
-            RaisedButton(
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+            Expanded(
+              child: ListView.builder(
+                itemCount: item.todo.length,
+                padding: EdgeInsets.all(8.0),
+                itemBuilder: (BuildContext context, int index) {
+                  return RaisedButton(
+                    shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text(item.todo[index]),
+                        Icon(Icons.keyboard_return),
+                      ],
+                    ),
+                    onPressed: () {
+                      _toDo(item.todo[index]);
+                    },
+                  );
+                },
               ),
-              textColor: Colors.white,
-              color: Colors.blue,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(item.todo),
-                  Icon(Icons.keyboard_return),
-                ],
-              ),
-              onPressed: () {
-                _toDo(item.todo);
-              },
             )
           ],
         ),

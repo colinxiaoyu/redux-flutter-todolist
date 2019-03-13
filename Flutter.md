@@ -531,7 +531,7 @@ Widget build(BuildContext context) {
 - expand({ double width, double height})可理解为拉伸 Creates box constraints that expand to fill another box constraints.
 
 ### Stack
-Object > Diagnosticable > DiagnosticableTree > Widget > RenderObjectWidget > MultiChildRenderObjectWidget > Stack
+`Object > Diagnosticable > DiagnosticableTree > Widget > RenderObjectWidget > MultiChildRenderObjectWidget > Stack`
 A widget that positions its children relative to the edges of its box.
 Stack的布局行为，根据child是positioned还是non-positioned来区分。
 1. 对于positioned的子节点，它们的位置会根据所设置的top、bottom、right以及left属性来确定，这几个值都是相对于Stack的左上角；
@@ -731,9 +731,12 @@ onVerticalDragUpdate：与屏幕接触并水平移动的指针在水平方向上
 onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与屏幕接触，并且当它停止接触屏幕时以特定速度移动
 
 
+### AnimationController extends Animation<double> with AnimationEagerListenerMixin, AnimationLocalListenersMixin, AnimationLocalStatusListenersMixin
 
 
-
+### AnimatedBuilder extends 
+`AnimatedWidget > StatefulWidget`
+A general-purpose widget for building animations.
 
  
 

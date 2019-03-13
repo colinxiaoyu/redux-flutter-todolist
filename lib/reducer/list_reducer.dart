@@ -6,14 +6,14 @@ class ToDoState {
   String title;
   String desc;
   bool isDone;
-  String todo;
+  List<String> todo;
 
   ToDoState(
       {this.uniqueId,
       this.title = '',
       this.desc = '',
       this.isDone = false,
-      this.todo = 'Do noting'}) {
+      this.todo = const ['Do noting']}) {
     uniqueId ??= DateTime.now().toIso8601String();
   }
 
@@ -33,21 +33,21 @@ class TodoList {
       title: 'AnimatedContainer',
       desc: '基础动画',
       isDone: true,
-      todo: '改变宽度和高度',
+      todo: ['AnimatedContainer'],
     ),
     ToDoState(
       uniqueId: '1',
       title: 'AnimatedCrossFadeDemo',
       desc: '两个组件 交叉 淡入淡出',
       isDone: true,
-      todo: 'AnimatedCrossFadeDemo',
+      todo: ['AnimatedCrossFadeDemo'],
     ),
     ToDoState(
       uniqueId: '2',
       title: '重点HideBottomBarDemo',
       desc: 'listview上下滑动时自动隐藏 底部 \n'
         '需要掌握 AnimatedBuilder Animation.animate 等动画',
-      todo: 'HideBottomBarDemo',
+      todo: ['HideBottomBarDemo'],
       isDone: false,
     )
   ];
