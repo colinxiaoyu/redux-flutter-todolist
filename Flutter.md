@@ -1,0 +1,743 @@
+## flutter_app API学习
+
+### Constraints  abstract class
+An abstract set of layout constraints.
+
+### ShapeBorder  abstract class
+Base class for shape outlines.
+
+### StatefulWidget 类
+具有可变状态( state)的Widget(窗口小部件).
+> build:Describes the part of the user interface represented by this widget.
+
+### StatelessWidget 类 
+不需要可变状态的小部件。
+
+### Builder extends StatelessWidget 类
+A platonic widget that calls a closure to obtain its child widget.
+
+### MaterialApp extends StatefulWidget 类
+An application that uses material design.
+
+### Scaffold extends StatefulWidget 类
+Implements the basic material design visual layout structure.
+脚手架，最基本的布局
+####属性值：
+- appBar:(PreferredSizeWidget)标题 An app bar to display at the top of the scaffold.
+- body: (Widget)The primary content of the scaffold
+- floatingActionButton:(Widget) 在 Material 中定义的一个功能按钮。
+- floatingActionButtonLocation:(FloatingActionButtonLocation) Responsible for determining where the [floatingActionButton] should go.
+- floatingActionButtonAnimator:(FloatingActionButtonAnimator) Animator to move the [floatingActionButton] to a new [floatingActionButtonLocation]
+- persistentFooterButtons:A set of buttons that are displayed at the bottom of the scaffold.
+- drawer:(Widget)侧边栏控件
+- endDrawer:
+- bottomNavigationBar:显示在底部的导航栏按钮栏。
+- bottomSheet: The persistent bottom sheet to display.
+- backgroundColor:背景颜色
+- resizeToAvoidBottomPadding: = true, 控制界面内容 body 是否重新布局来避免底部被覆盖了，比如当键盘显示的时候，重新布局避免被键盘盖住内容。默认值为 true。
+- primary: = true,
+
+### AppBar 显示在app的顶部
+![AppBar 结构](./READMESRC/AppBar.png)
+- leading:左上角的控件，一般放一个icon，位置如上图
+- automaticallyImplyLeading = true,
+- title:标题，位置如上图
+- actions:	一系列的组件，位置如上图
+- flexibleSpace:位置如上图
+- bottom:位置如上图
+- elevation = 4.0:阴影Z轴
+- backgroundColor:背景颜色
+- brightness:亮度
+- iconTheme:图标样式
+- textTheme:字体样式
+- primary = true,
+- centerTitle:(bool)title是否显示在中间
+- titleSpacing = (double)NavigationToolbar.kMiddleSpacing The spacing around [title] content on the horizontal axis.
+- toolbarOpacity = 1.0,
+- bottomOpacity = 1.0,
+```dart
+ Widget build(BuildContext context) {
+    new Scaffold(
+          appBar: AppBar(
+            leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () {}),
+            title: Text('AppBar'),
+            actions: <Widget>[
+              IconButton(icon: Icon(Icons.add), onPressed: () {}),
+              IconButton(icon: Icon(Icons.dashboard), onPressed: () {}),
+              IconButton(icon: Icon(Icons.cached), onPressed: () {}),
+            ],
+            flexibleSpace: Container(
+              color: Colors.red,
+            ),
+            bottom: PreferredSize(
+              child: Container(
+                height: 50,
+                width: double.infinity,
+                color: Colors.grey,
+                child: Text('bottom'),
+              ),
+              preferredSize: Size(30, 100),
+            ),
+          ),
+        );
+}
+```
+   
+### FloatingActionButton:标题
+- child:子视图，一般为Icon，不推荐使用文字
+- tooltip:FAB的文字解释，FAB被长按时显示，也是无障碍功能
+- foregroundColor:前景色
+- backgroundColor:背景色
+- heroTag:hero效果使用的tag,系统默认会给所有FAB使用同一个tag,方便做动画效果
+- elevation:未点击时阴影值，默认6.0
+- hignlightElevation:点击时阴影值，默认12.0
+- onPressed:点击事件回调
+- mini:是否为“mini”类型，默认为false
+- shape:定义FAB的shape，设置shape时，默认的elevation将会失效,默认为CircleBorder
+- isExtended:是否为”extended”类型
+```dart
+    Widget build(BuildContext context) {
+        return new Scaffold(
+          floatingActionButton: new Builder(builder: (BuildContext context) {
+            return new FloatingActionButton(
+              child: const Icon(Icons.add),
+              tooltip: "Hello",
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.black,
+              heroTag: null,
+              elevation: 7.0,
+              highlightElevation: 14.0,
+              onPressed: () {
+                Scaffold.of(context).showSnackBar(new SnackBar(
+                  content: new Text("FAB is Clicked"),
+                ));
+              },
+              mini: false,
+              shape: new CircleBorder(),
+              isExtended: false,
+            );
+          }),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        );
+      }
+```
+
+### Icon extends StatelessWidget 图标
+图形图标，来自于所述的字体的字形绘制。图标不可交互式。https://raw.githubusercontent.com/flutter/cupertino_icons/master/map.png
+- icon:图形库，常量
+- size:(double)逻辑像素中图标的大小(pt.dp)。由于图标是正方形，设置size等于同时设置了宽高。默认为当前IconTheme，大小24.0（带逻辑像素单位）
+- color:设置图标颜色，如果没设置以主题是黑色则图标颜色默认为白色，如果主题较浅则图标颜色默认为黑色。
+- semanticLabel:帮助盲人或者视力有障碍的用户提供语言辅助描述
+- textDirection:渲染图标的方向,前提需要IconData.matchTextDirection字段设置为true
+```
+Icon(
+      Icons.camera,
+      size: 50,
+      color: Colors.cyan,
+      textDirection: TextDirection.ltr,
+    );
+```
+
+###  ImageIcon extends StatelessWidget
+自定义图形图标，来自于图片绘制。图标不可交互式。
+- image：ImageProvider
+- size
+- color
+- semanticLabel
+
+### IconButton extends StatelessWidget
+- iconSize = 24.0,
+- padding = const EdgeInsets.all(8.0),
+- alignment = Alignment.center,
+- @required icon,
+- color,
+- highlightColor,
+- splashColor,
+- disabledColor,
+- @required onPressed,
+- tooltip
+
+### PreferredSize extends StatelessWidget
+A widget with a preferred size.This widget does not impose any constraints on its child, and it doesn't affect the child's layout in any way. It just advertises a preferred size which can be used by the parent.
+- @required child
+- @required preferredSize:(Size)
+
+### SnackBar extends StatelessWidget
+- @required content,
+- backgroundColor,
+- action,
+- duration = _kSnackBarDisplayDuration,
+- animation,
+```
+ Scaffold.of(context).showSnackBar(new SnackBar(content: new Text("FAB is Clicked"),));
+```
+
+### CircleBorder extends ShapeBorder
+A border that fits a circle within the available space
+- side = BorderSide.none
+
+### BorderSide class
+Creates the side of a border.
+- color = const Color(0xFF000000),
+- width = 1.0,
+- style = BorderStyle.solid,
+
+### BorderStyle enum
+if you add more, think about how they will lerp
+- none:Skip the border.
+- solid,  /// Draw the border as a solid line.
+
+### Text extends StatelessWidget
+两个构造方法 Text.rich(textSpan) Text(data) 二选一
+```
+new Text.rich(TextSpan(text:'Hello World' ),
+                style: Theme.of(context)
+                    .textTheme
+                    .display1
+                    .copyWith(color: Colors.black));
+new Text('Hello World',
+                style: Theme.of(context)
+                    .textTheme
+                    .display1
+                    .copyWith(color: Colors.black))
+                    
+```
+- textSpan:(TextSpan)
+- data:(String) 显示的文本
+- style:(TextStyle)
+- textAlign:(TextAlign)
+- textDirection:(TextDirection)
+- locale:(Locale)
+- softWrap:(bool)是否自动换行，若为false，文字将不考虑容器大小，单行显示，超出屏幕部分将默认截断处理
+- overflow:(TextOverflow):How visual overflow should be handled.
+- textScaleFactor:(double)字体显示倍率
+- maxLines,
+- semanticsLabel:(String)语义标签，相当于解释作用，没有实际意义
+
+### abstract  Diagnosticable
+ A base class for providing string and [DiagnosticsNode] debug representations describing the properties of an object.
+ 
+### abstract  DiagnosticableTree extends Diagnosticable
+ A base class for providing string and [DiagnosticsNode] debug representations describing the properties and children of an object.
+
+### TextSpan extends DiagnosticableTree
+- style:(TextStyle)
+- text:(String)
+- children:(List<TextSpan>)
+- recognizer:(GestureRecognizer)
+
+### TextStyle extends Diagnosticable 
+- inherit = true:(bool) 是否继承
+- color:
+- fontSize:(double)
+- fontWeight:(FontWeight)
+- fontStyle:(FontStyle)
+- letterSpacing:(double) The amount of space (in logical pixels) to add between each letter.
+- wordSpacing:(double) The amount of space (in logical pixels) to add at each sequence of white-space (i.e. between each word).
+- textBaseline:(TextBaseline) 文本绘制基线(alphabetic/ideographic)
+- height,
+- locale,
+- foreground:(Paint)
+- background:(Paint)
+- shadows:(List<ui.Shadow>)
+- decoration:(TextDecoration) 文字的下划线等
+- decorationColor:(Color)
+- decorationStyle:(TextDecorationStyle) 波浪线等
+- debugLabel:(String)  A human-readable description of this text style. 相当于注释
+- fontFamily:(String)
+- package: The `package` argument must be non-null if the font family is defined in a package. It is combined with the `fontFamily` argument to set the [fontFamily] property.
+
+### Paint class
+
+### TextDecoration class
+A linear decoration to draw near the text.
+- none
+- underline 
+- overline 
+- lineThrough
+
+### TextDecorationStyle  enum
+The style in which to draw a text decoration
+- solid,
+- double,
+- dotted,
+- dashed,
+- wavy
+
+### TextAlign  enum
+- left,
+- right,
+- center,
+- justify:
+- start:与[TextDirection] 有关
+- end:与[TextDirection] 有关
+
+### TextDirection enum    
+- rtl:The text flows from right to left (e.g. Arabic, Hebrew).
+- ltr:The text flows from left to right (e.g., English, French).
+
+### TextOverflow enum
+裁剪方式
+- clip:Clip the overflowing text to fix its container.
+- fade:Fade the overflowing text to transparent.
+- ellipsis:Use an ellipsis to indicate that the text has overflowed.
+
+### Size extends OffsetBase
+Holds a 2D floating-point size.
+- width 
+- height
+
+### OffsetBase  abstract
+Base class for [Size] and [Offset], which are both ways to describe a distance as a two-dimensional axis-aligned vector.
+
+### Center extends Align
+ A widget that centers its child within itself.
+- widthFactor: widthFactor
+- heightFactor: heightFactor
+- child: child
+
+### Align extends SingleChildRenderObjectWidget
+A widget that aligns its child within itself and optionally sizes itself based on the child's size.
+相当于盒子模型
+- alignment = Alignment.center,
+- widthFactor,
+- heightFactor,
+- child:(Widget)
+
+### Alignment extends AlignmentGeometry
+- topLeft:Alignment(-1.0, -1.0);
+- topRight:Alignment(1.0, -1.0);
+- centerLeft:Alignment(-1.0, 0.0);
+- center:Alignment(0.0, 0.0);
+- centerRight:Alignment(1.0, 0.0);
+- bottomLeft:Alignment(-1.0, 1.0);
+- bottomCenter:Alignment(0.0, 1.0);
+- bottomRight:Alignment(1.0, 1.0);
+
+### BoxDecoration extends Decoration
+ An immutable description of how to paint a box.
+- color:The color to fill in the background of the box.
+- image:(DecorationImage)
+- border:(BoxBorder)
+- borderRadius:(BorderRadius)
+- boxShadow:(List<BoxShadow>) 阴影
+- gradient:(Gradient)  A gradient to use when filling the box.
+- backgroundBlendMode,
+- shape = BoxShape.rectangle,
+ ```
+ Container(
+    decoration: BoxDecoration(
+    color: const Color(0xff7c94b6),
+    image: DecorationImage(
+      image: ExactAssetImage('images/flowers.jpeg'),
+     fit: BoxFit.cover,
+     ),
+    border: Border.all(
+       color: Colors.black,
+       width: 8.0,
+     ),
+  ),
+ )
+```
+
+### Decoration extends Diagnosticable abstract
+
+### Border extends BoxBorder
+- top = BorderSide.none,
+- right = BorderSide.none,
+- bottom = BorderSide.none,
+- left = BorderSide.none,
+- Border.all()
+
+### BoxBorder extends ShapeBorder abstract
+ A border to draw above the background [color], [gradient], or [image].
+ 
+### BorderRadius extends BorderRadiusGeometry
+ An immutable set of radii for each corner of a rectangle. 提供圆角的方法
+- BorderRadius.all()
+- BorderRadius.only()
+
+### BoxShadow extends ui.Shadow
+- color = const Color(0xFF000000),
+- offset = Offset.zero:偏移量
+- blurRadius = 0.0:圆角
+- spreadRadius = 0.0:应用模糊之前，框应该充气的量。
+
+### LinearGradient extends Gradient
+- begin = Alignment.centerLeft,
+- end = Alignment.centerRight,
+- @required List<Color> colors,
+- stops:(List<double>)It specifies fractions of the radius between 0.0 and 1.0, giving concentric rings for each color stop.
+- tileMode = TileMode.clamp, 与[begin],[end]结合使用
+
+###  TileMode enum
+- clamp :Edge is clamped to the final color.
+- repeated:Edge is repeated from first color to last.
+- mirror:Edge is mirrored from last color to first.
+
+### Image extends StatefulWidget
+- @required image:(ImageProvider)The image to display. 获取方式很多:https://blog.csdn.net/poorkick/article/details/80458707
+- semanticLabel,
+- excludeFromSemantics = false: If [excludeFromSemantics] is true, then [semanticLabel] will be ignored.
+- width,
+- height,
+- color,
+- colorBlendMode = BlendMode.srcIn:图层处理
+- fit:(BoxFit) 填充方式
+- alignment = Alignment.center,
+- repeat = ImageRepeat.noRepeat,
+- centerSlice:(Rect) 当图片需要被拉伸显示的时候，centerSlice定义的矩形区域会被拉伸，可以理解成我们在图片内部定义来一个点9文件用作拉伸。也就是说只有在显示大小大于原图大小的情况下，才允许使用这个属性，否则会报错。
+- matchTextDirection = false,与Directionality配合使用
+- gaplessPlayback = false,当ImageProvider发生变化后，重新加载图片的过程中，原图片的展示是否保留。若值为true，保留，若为false，不保留，直接空白等待下一张图片加载。
+- filterQuality = FilterQuality.low,图片质量
+
+### BlendMode enum
+颜色与图片不同的组合方式 28 种
+- clear,Drop both the source and destination images, leaving nothing.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_clear.png)
+- src,Drop the destination image, only paint the source image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_src.png)
+- dst, Drop the source image, only paint the destination image. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_dst.png)
+- srcOver, Composite the source image over the destination image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_srcOver.png)
+- dstOver,Composite the source image under the destination image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_dstOver.png)
+- srcIn,Show the source image, but only where the two images overlap. The destination image is not rendered, it is treated merely as a mask. The color channels of the destination are ignored, only the opacity has an effect. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_srcIn.png)
+- dstIn, Show the destination image, but only where the two images overlap. The source image is not rendered, it is treated merely as a mask. The color channels of the source are ignored, only the opacity has an effect.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_dstIn.png)
+- srcOut,  Show the source image, but only where the two images do not overlap. The destination image is not rendered, it is treated merely as a mask. The color channels of the destination are ignored, only the opacity has an effect.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_srcOut.png)
+- dstOut, Show the destination image, but only where the two images do not overlap. The source image is not rendered, it is treated merely as a mask. The color channels of the source are ignored, only the opacity has an effect.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_dstOut.png)
+- srcATop, Composite the source image over the destination image, but only where it overlaps the destination. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_srcATop.png)
+- dstATop, Composite the destination image over the source image, but only where it overlaps the source. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_dstATop.png)
+- xor, Apply a bitwise `xor` operator to the source and destination images. This leaves transparency where they would overlap. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_xor.png)
+- plus, Sum the components of the source and destination images.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_plus.png)
+- modulate, Multiply the color components of the source and destination images. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_modulate.png)
+- screen,  Multiply the inverse of the components of the source and destination images, and inverse the result.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_screen.png)
+- overlay, Multiply the components of the source and destination images after adjusting them to favor the destination.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_overlay.png)
+- darken, Composite the source and destination image by choosing the lowest value from each color channel. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_darken.png)
+- lighten, Composite the source and destination image by choosing the highest value from each color channel. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_lighten.png)
+- colorDodge, Divide the destination by the inverse of the source. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_colorDodge.png)
+- colorBurn, Divide the inverse of the destination by the the source, and inverse the result. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_colorBurn.png)
+- hardLight, Multiply the components of the source and destination images after adjusting them to favor the source. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_hardLight.png)
+- softLight, Use [colorDodge] for source values below 0.5 and [colorBurn] for source values above 0.5. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_softLight.png)
+- difference, Subtract the smaller value from the bigger value for each channel. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_difference.png)
+- exclusion,Subtract double the product of the two images from the sum of the two images. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_exclusion.png)
+- multiply,  Multiply the components of the source and destination images, including the alpha channel. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_multiply.png)
+- hue,Take the hue of the source image, and the saturation and luminosity of the destination image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_hue.png)
+- saturation, Take the saturation of the source image, and the hue and luminosity of the destination image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_hue.png)
+- color, Take the hue and saturation of the source image, and the luminosity of thedestination image.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_color.png)
+- luminosity, Take the luminosity of the source image, and the hue and saturation of thedestination image. ![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_luminosity.png)
+
+### BoxFit enum
+- fill,
+- contain,
+- cover,
+- fitWidth,
+- fitHeight,
+- none,
+- scaleDown:Align the source within the target box (by default, centering) and, if necessary, scale the source down to ensure that the source fits within the box.
+
+
+## flutter 布局学习
+
+### Expanded extends Flexible
+A widget that controls how a child of a [Row], [Column], or [Flex] flexes.并且 Expanded组件必须用在Row、Column、Flex内。
+Row、Column、Flex会被Expanded撑开，充满主轴可用空间。
+
+### Row extends Flex  Column extends Flex
+https://www.jianshu.com/p/0ce74751d970
+`Object > Diagnosticable > DiagnosticableTree > Widget > RenderObjectWidget > MultiChildRenderObjectWidget > Flex > Row`
+A widget that displays its children in a horizontal array.
+- MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start:主轴的对齐方式
+- MainAxisSize mainAxisSize = MainAxisSize.max:在主轴方向占有空间的值，默认是max。
+- CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center:children在交叉轴方向的对齐方式，
+- TextDirection textDirection:阿拉伯语系的兼容设置，一般无需处理。
+- VerticalDirection verticalDirection = VerticalDirection.down:定义了children摆放顺序，默认是down。
+- TextBaseline textBaseline,
+- List<Widget> children = const <Widget>[]:子视图
+
+### Flex
+Flex的构造函数就比Row和Column的多了一个参数。Row跟Column的区别，正是这个direction参数的不同。当为Axis.horizontal的时候，则是Row，当为Axis.vertical的时候，则是Column。
+
+### MainAxisAlignment enum
+How the children should be placed along the main axis in a flex layout.
+- center：将children放置在主轴的中心；
+- end：将children放置在主轴的末尾；
+- spaceAround：将主轴方向上的空白区域均分，使得children之间的空白区域相等，但是首尾child的空白区域为1/2；
+- spaceBetween：将主轴方向上的空白区域均分，使得children之间的空白区域相等，首尾child都靠近首尾，没有间隙；
+- spaceEvenly：将主轴方向上的空白区域均分，使得children之间的空白区域相等，包括首尾child；
+- start：将children放置在主轴的起点；
+
+### MainAxisSize enum
+How much space should be occupied in the main axis.
+- max：根据传入的布局约束条件，最大化主轴方向的可用空间；
+- min：与max相反，是最小化主轴方向的可用空间；
+
+### CrossAxisAlignment
+How the children should be placed along the cross axis in a flex layout.
+- baseline：在交叉轴方向，使得children的baseline对齐；
+- center：children在交叉轴上居中展示；
+- end：children在交叉轴上末尾展示；
+- start：children在交叉轴上起点处展示；
+- stretch：让children填满交叉轴方向；
+
+### CrossAxisAlignment enum
+How the children should be placed along the cross axis in a flex layout.
+- down：从top到bottom进行布局；
+- up：从bottom到top进行布局。
+
+### TextBaseline enum
+A horizontal line used for aligning text. 感觉没啥用
+- alphabetic,
+- ideographic,
+
+### Container extends StatelessWidget
+A convenience widget that combines common painting, positioning, and sizing widgets.
+- alignment:(AlignmentGeometry) Alignment表达对齐方式
+- padding:(EdgeInsetsGeometry)
+- color,
+- decoration:(Decoration)绘制在child后面的装饰，设置了decoration的话，就不能设置color属性，否则会报错，此时应该在decoration中进行颜色的设置。
+- foregroundDecoration:绘制在child前面的装饰。
+- width,
+- height,
+- constraints:(BoxConstraints)添加到child上额外的约束条件。
+- margin,
+- transform(Matrix4),设置container的变换矩阵
+- child,
+```dart
+Widget build(BuildContext context) {
+  return new Container(
+      constraints: new BoxConstraints.expand(
+        height:Theme.of(context).textTheme.display1.fontSize * 1.1 + 200.0,
+      ),
+      decoration: new BoxDecoration(
+        border: new Border.all(width: 2.0, color: Colors.red),
+        color: Colors.grey,
+        borderRadius: new BorderRadius.all(new Radius.circular(20.0)),
+        image: new DecorationImage(
+          image: new NetworkImage('http://h.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=0d023672312ac65c67506e77cec29e27/9f2f070828381f30dea167bbad014c086e06f06c.jpg'),
+          centerSlice: new Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
+        ),
+      ),
+      padding: const EdgeInsets.all(8.0),
+      alignment: Alignment.center,
+      child: new Text('Hello World',
+        style: Theme.of(context).textTheme.display1.copyWith(color: Colors.black)),
+      transform: new Matrix4.rotationZ(0.3),
+  );
+}
+```
+### BoxConstraints extends Constraints  
+- minWidth = 0.0,
+- maxWidth = double.infinity,
+- minHeight = 0.0,
+- maxHeight = double.infinity
+一般使用他的方法
+- expand({ double width, double height})可理解为拉伸 Creates box constraints that expand to fill another box constraints.
+
+### Stack
+Object > Diagnosticable > DiagnosticableTree > Widget > RenderObjectWidget > MultiChildRenderObjectWidget > Stack
+A widget that positions its children relative to the edges of its box.
+Stack的布局行为，根据child是positioned还是non-positioned来区分。
+1. 对于positioned的子节点，它们的位置会根据所设置的top、bottom、right以及left属性来确定，这几个值都是相对于Stack的左上角；
+2. 对于non-positioned的子节点，它们会根据Stack的aligment来设置位置。
+
+- alignment = AlignmentDirectional.topStart,
+- textDirection,
+- fit = StackFit.loose, 定义如何设置non-positioned节点尺寸，默认为loose。
+>loose：子节点宽松的取值，可以从min到max的尺寸；
+expand：子节点尽可能的占用空间，取max尺寸；
+passthrough：不改变子节点的约束条件。
+- overflow = Overflow.clip,超过的部分是否裁剪掉（clipped || visible）
+-  children:(List),
+```
+Stack(
+  alignment: const Alignment(0.6, 0.6),
+  children: [
+    CircleAvatar(
+      backgroundImage: AssetImage('images/pic.jpg'),
+      radius: 100.0,
+    ),
+    Container(
+      decoration: BoxDecoration(
+        color: Colors.black45,
+      ),
+      child: Text(
+        'Mia B',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    ),
+  ],
+);
+```
+
+### IndexedStack extends Stack
+A Stack that shows a single child from a list of children.
+IndexedStack继承自Stack，它的作用是显示第index个child，其他child都是不可见的。所以IndexedStack的尺寸永远是跟最大的子节点尺寸一致。
+
+- final int index:The index of the child to show.
+```
+Container(
+  color: Colors.yellow,
+  child: IndexedStack(
+    index: 1,
+    alignment: const Alignment(0.6, 0.6),
+    children: [
+      CircleAvatar(
+        backgroundImage: AssetImage('images/pic.jpg'),
+        radius: 100.0,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black45,
+        ),
+        child: Text(
+          'Mia B',
+          style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+```
+
+### ListView extends BoxScrollView > ScrollView  > StatelessWidget
+一般使用 ListView.builder ListView.custom
+
+- Axis scrollDirection = Axis.vertical,
+- bool reverse = false:Item 的顺序是否反转，若为 true 则反转。
+- ScrollController controller：滑动监听
+- bool primary:是否是与 PrimaryScrollController 关联的主滚动视图，若为 true 则 controller 必须为空。  
+- ScrollPhysics physics：设置 ListView 如何响应用户的滑动行为，值为一个 ScrollPhysics 对象，它的实现类常用的有：
+```
+    AlwaysScrollableScrollPhysics：总是可以滑动。
+    NeverScrollableScrollPhysics：禁止滚动。
+    BouncingScrollPhysics：内容超过一屏，上拉有回弹效果。
+    ClampingScrollPhysics：包裹内容，不会有回弹，感觉跟 AlwaysScrollableScrollPhysics 差不多。
+```
+- bool shrinkWrap = false,
+- EdgeInsetsGeometry padding：整个 ListView 的内间距。
+- double itemExtent： Item 的范围，scrollDirection 为 Axis.vertical 时限制高度，scrollDirection 为 Axis.horizontal 限制宽度。
+- @required IndexedWidgetBuilder itemBuilder,
+- int itemCount,
+- bool addAutomaticKeepAlives = true,
+- bool addRepaintBoundaries = true,
+- bool addSemanticIndexes = true,
+- double cacheExtent：预加载的区域。
+- int semanticChildCount,
+- SliverChildDelegate childrenDelegate; 使用ListView.custom构造方法时，需自定义
+
+
+### Divider extends StatelessWidget
+ A one device pixel thick horizontal line, with padding on either side.
+
+### TextField extends StatefulWidget
+- controller,            //控制器，控制TextField文字
+- focusNode,
+- decoration: const InputDecoration(),      //输入器装饰
+- TextInputType keyboardType: TextInputType.text, //输入的类型
+- textCapitalization ：TextCapitalization.none,
+- this.style,
+- textAlign: TextAlign.start,
+- autofocus: false,
+- obscureText: false,  //是否隐藏输入
+- autocorrect: true,
+- maxLines: 1,
+- maxLength,
+- maxLengthEnforced: true,
+- onChanged：文字改变触发
+- onSubmitted：文字提交触发（键盘按键）
+- onEditingComplete,  //当用户提交可编辑内容时调用
+- inputFormatters,//[WhitelistingTextInputFormatter.digitsOnly],//允许的输入格式
+- enabled,//是否禁用
+- cursorWidth = 2.0,
+- cursorRadius,
+- cursorColor,
+- keyboardAppearance,
+
+### InputDecoration 
+const InputDecoration({
+    this.icon,
+    this.labelText,
+    this.labelStyle,
+    this.helperText,
+    this.helperStyle,
+    this.hintText,
+    this.hintStyle,
+    this.errorText,
+    this.errorStyle,
+    this.errorMaxLines,
+    this.hasFloatingPlaceholder = true,
+    this.isDense,
+    this.contentPadding,
+    this.prefixIcon,
+    this.prefix,
+    this.prefixText,
+    this.prefixStyle,
+    this.suffixIcon,
+    this.suffix,
+    this.suffixText,
+    this.suffixStyle,
+    this.counterText,
+    this.counterStyle,
+    this.filled,
+    this.fillColor,
+    this.errorBorder,
+    this.focusedBorder,
+    this.focusedErrorBorder,
+    this.disabledBorder,
+    this.enabledBorder,
+    this.border,
+    this.enabled = true,
+    this.semanticCounterText,
+  })
+
+
+
+### GestureDetector
+Flutter中的手势系统分为两层，第一层是触摸原事件（指针），有相应的四种事件类型。
+
+1. PointerDownEvent ：用户与屏幕接触产生了联系。 
+2. PointerMoveEvent ：手指已从屏幕上的一个位置移动到另一个位置。 
+3. PointerUpEvent ：用户已停止接触屏幕。 
+4. PointerCancelEvent ：此指针的输入不再指向此应用程序。
+
+第二层就是我们可以检测到的手势，主要分为三大类，包括轻击，拖动和缩放，下面是具体的手势监听方法。
+
+点击（一次）：
+
+onTapDown ：点击屏幕立即触发此方法。
+onTapUp ：手指离开屏幕。
+onTap ：点击屏幕。
+onTapCancel：此次点击事件结束，onTapDown不会在产生点击事件。
+双击：
+
+onDoubleTap ：用户快速连续两次在同一位置点击屏幕。
+长按：
+
+onLongPress ：长时间保持与相同位置的屏幕接触
+垂直拖动：
+
+onVerticalDragStart： 与接触屏幕，可能会开始垂直移动。
+onVerticalDragUpdate：与屏幕接触并垂直移动的指针在垂直方向上移动
+onVerticalDragEnd ：之前与屏幕接触并垂直移动的指针不再与屏幕接触，并且在停止接触屏幕时以特定速度移动
+水平拖动：
+
+onHorizontalDragStart ：与接触屏幕，可能开始水平移动
+onVerticalDragUpdate：与屏幕接触并水平移动的指针在水平方向上移动
+onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与屏幕接触，并且当它停止接触屏幕时以特定速度移动
+
+
+
+
+
+
+ 
+
+
+
+
+
