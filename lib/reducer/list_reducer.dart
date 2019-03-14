@@ -30,10 +30,10 @@ class TodoList {
   static List<ToDoState> initToDos = <ToDoState>[
     ToDoState(
       uniqueId: '0',
-      title: 'AnimatedContainer',
+      title: 'AnimatedContainerDemo',
       desc: '基础动画',
       isDone: true,
-      todo: ['AnimatedContainer'],
+      todo: ['AnimatedContainerDemo'],
     ),
     ToDoState(
       uniqueId: '1',

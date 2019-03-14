@@ -12,7 +12,6 @@ import 'package:flutter/material.dart';
 class AnimatedContainerDemo extends StatefulWidget {
   @override
   _AnimatedContainerDemoState createState() {
-    // TODO: implement createState
     return _AnimatedContainerDemoState();
   }
 }
