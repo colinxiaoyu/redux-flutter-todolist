@@ -435,6 +435,11 @@ A widget that aligns its child within itself and optionally sizes itself based o
 
 ## flutter 布局学习
 
+### Flexible extends ParentDataWidget<Flex>
+作用与 Expanded 一样 
+但 Flexible 有fit 属性 默认为 fit = FlexFit.loose
+而 Expanded 无fit 属性 默认为 fit = FlexFit.tight
+
 ### Expanded extends Flexible
 A widget that controls how a child of a [Row], [Column], or [Flex] flexes.并且 Expanded组件必须用在Row、Column、Flex内。
 Row、Column、Flex会被Expanded撑开，充满主轴可用空间。
@@ -635,9 +640,17 @@ Container(
  A one device pixel thick horizontal line, with padding on either side.
 
 ### TextField extends StatefulWidget
-- controller,            //控制器，控制TextField文字
+需注意 TextField 外部需有 Expanded 等包裹住 不然报错
+- controller:(TextEditingController)            //控制器，控制TextField文字
+```
+var controller1 = TextEditingController.fromValue(TextEditingValue(
+        text: title,
+        selection: TextSelection.fromPosition(TextPosition(
+            affinity: TextAffinity.downstream, offset: title.length))));
+```
 - focusNode,
 - decoration: const InputDecoration(),      //输入器装饰
+`decoration:InputDecoration.collapsed(hintText: "Send your message"),`
 - TextInputType keyboardType: TextInputType.text, //输入的类型
 - textCapitalization ：TextCapitalization.none,
 - this.style,
