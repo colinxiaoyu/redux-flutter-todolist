@@ -66,6 +66,13 @@ class TodoList {
       isDone: false,
       todo: ['AudioScreen'],
     ),
+    ToDoState(
+      uniqueId: '5',
+      title: 'Stream',
+      desc: 'stream 相关应用',
+      isDone: false,
+      todo: ['SimpleStreamPage'],
+    ),
   ];
 
   TodoList({this.list});
