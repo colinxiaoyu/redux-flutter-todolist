@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class SimpleStreamPage extends StatelessWidget {
-  StreamController _controller = StreamController();
+/// 为什么要使用 StatefulWidget ，因为_controller 需要销毁，不然会有警告
+class SimpleStreamPage extends StatefulWidget {
+  @override
+  _SimpleStreamPageState createState() {
+    return _SimpleStreamPageState();
+  }
+}
 
-  int count = 0;
+class _SimpleStreamPageState extends State<SimpleStreamPage> {
+  StreamController _controller;
 
+  int count;
+
+  @override
+  void initState() {
+    _controller = StreamController();
+    count = 0;
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
