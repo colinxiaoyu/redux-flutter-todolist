@@ -813,8 +813,42 @@ _animationController = AnimationController(
 Called every time the animation changes value.每一帧动画重新调用
 - child:供 builder 方法调用，描述 builder 内部组件
 
- 
 
+### StreamController
+1. 基本用途：A controller with the stream it controls. 流的控制器，创建流的方式之一；
+2. 内部属性含义
+- sink Returns a view of this object that only exposes the [StreamSink] interface.可以看做是StreamController的入口
+- sink.add StreamSink 的 add 方法 可以放入任何方法等
+- stream  The stream that this controller is controlling StreamController 控制的东西，stream 是先进先出的
+ 
+### Stream
+A source of asynchronous data events. 同步的数据
+A Stream provides a way to receive a sequence of events.
+1. 构造方法
+
+Stream.fromFuture(Future<T> future)
+Stream.fromFutures(Iterable<Future<T>> futures)
+Stream.fromIterable(Iterable<T> elements)
+
+2. 方法
+where where(bool test(T event)) ,传入bool类型的返回值函数，过滤输出数据
+take(int count) ,表示接受输入的次数，当传输次数达到这个数字时，这个流将会关闭，无法再传输。
+transform
+
+
+
+### StreamSubscription
+A subscription on events from a [Stream].
+```
+ StreamController controller = StreamController();
+
+ //监听这个流的出口，当有data流出时，打印这个data
+  StreamSubscription subscription =
+  controller.stream.listen((data)=>print(data));
+
+  controller.sink.add(321);
+```
+ 
 
 
 
