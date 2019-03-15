@@ -848,6 +848,59 @@ A subscription on events from a [Stream].
 
   controller.sink.add(321);
 ```
+
+### StreamBuilder
+Widget that builds itself based on the latest snapshot of interaction with a [Stream].
+本质是一个带有对stream 监听器 [StreamSubscription] 的 [StatefulWidget] 
+- initialData：初始化数据
+- Stream<T> stream ：监听的 stream 
+- @required builder：返回的视图
+```
+class SimpleStreamPage extends StatelessWidget {
+  StreamController _controller = StreamController();
+
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('SimpleStreamPage'),
+      ),
+      body: Center(
+          child: StreamBuilder(
+              initialData: count,
+              stream: _controller.stream,
+              builder: (context, snapshot) {
+                return Text(snapshot.data.toString());
+              })),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _controller.sink.add(count++);
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+```
+源码中的例子，可以监听 stream 当前的状态
+```dart
+/// StreamBuilder<int>(
+///   stream: _lot?.bids, // a Stream<int> or null
+///   builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+///     if (snapshot.hasError)
+///       return Text('Error: ${snapshot.error}');
+///     switch (snapshot.connectionState) {
+///       case ConnectionState.none: return Text('Select lot');
+///       case ConnectionState.waiting: return Text('Awaiting bids...');
+///       case ConnectionState.active: return Text('\$${snapshot.data}');
+///       case ConnectionState.done: return Text('\$${snapshot.data} (closed)');
+///     }
+///     return null; // unreachable
+///   },
+/// )
+```
  
 
 
