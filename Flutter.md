@@ -914,6 +914,9 @@ class SimpleStreamPage extends StatelessWidget {
 ///   },
 /// )
 ```
+
+### FocusScope
+FocusScope.of(context).requestFocus(FocusNode());//关闭软键盘
  
 
 
