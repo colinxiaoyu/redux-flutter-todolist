@@ -71,7 +71,7 @@ class TodoList {
       title: 'Stream',
       desc: 'stream 相关应用',
       isDone: false,
-      todo: ['SimpleStreamPage'],
+      todo: ['SimpleStreamPage','IMPage'],
     ),
   ];
 
