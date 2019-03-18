@@ -7,7 +7,8 @@ import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
 import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
-import 'package:redux_todolist/page/audio_screen.dart';
+import 'package:redux_todolist/page/example/audio_screen.dart';
+import 'package:redux_todolist/page/example/searchbar_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
@@ -210,6 +211,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'IMPage':
         push(IMPage());
+        break;
+      case 'SearchBarDemo':
+        push(SearchBarDemo());
         break;
       default:
         break;
