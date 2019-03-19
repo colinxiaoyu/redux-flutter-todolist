@@ -926,6 +926,15 @@ class SimpleStreamPage extends StatelessWidget {
 
 ### FocusScope
 FocusScope.of(context).requestFocus(FocusNode());//关闭软键盘
+
+### FocusNode 
+A leaf node in the focus tree that can receive focus.
+
+### KeyedSubtree  extends StatelessWidget
+A widget that builds its child.
+Useful for attaching a key to an existing widget.
+- Key key：(ValueKey)
+- @required child
  
 
 
