@@ -157,6 +157,15 @@ Icon(
 - @required onPressed,
 - tooltip
 
+### AnimatedIcon extends StatelessWidget 
+通过内部源码 可知：图像是通过画笔画成
+- @required this.icon: (AnimatedIconData)
+- @required this.progress:(Animation)
+- color,
+- size,
+- semanticLabel,
+- textDirection,
+
 ### PreferredSize extends StatelessWidget
 A widget with a preferred size.This widget does not impose any constraints on its child, and it doesn't affect the child's layout in any way. It just advertises a preferred size which can be used by the parent.
 - @required child
