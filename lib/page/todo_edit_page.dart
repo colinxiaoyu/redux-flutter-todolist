@@ -9,6 +9,7 @@ import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/page/example/audio_screen.dart';
 import 'package:redux_todolist/page/example/bottom_appBar_demo.dart';
+import 'package:redux_todolist/page/example/chip_page.dart';
 import 'package:redux_todolist/page/example/searchbar_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
@@ -218,6 +219,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'BottomAppBarDemo':
         push(BottomAppBarDemo());
+        break;
+      case 'ChipPage':
+        push(ChipPage());
         break;
       default:
         break;
