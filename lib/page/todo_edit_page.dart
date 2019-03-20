@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_todolist/page/animated/custom-route.dart';
+import 'package:redux_todolist/page/animated/draggable_demo.dart';
 import 'package:redux_todolist/page/animated/hero_demo.dart';
 import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
@@ -226,6 +227,10 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'CustomRouteFirstPage':
         push(CustomRouteFirstPage());
+        break;
+      case 'DraggableDemo':
+        push(DraggableDemo());
+        break;
       default:
         break;
     }

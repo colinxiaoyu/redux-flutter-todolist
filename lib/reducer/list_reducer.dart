@@ -43,7 +43,7 @@ class TodoList {
       todo: ['AnimatedCrossFadeDemo'],
     ),
     ToDoState(
-      uniqueId: '2',
+      uniqueId: '2.0',
       title: '重点HideBottomBarDemo',
       desc: 'listview上下滑动时自动隐藏 底部 \n'
         '需要掌握 AnimatedBuilder Animation.animate 等动画\n'
@@ -57,6 +57,13 @@ class TodoList {
       desc: '两个页面切换 路由 重写路由动画',
       isDone: true,
       todo: ['CustomRouteFirstPage'],
+    ),
+    ToDoState(
+        uniqueId: '2.2',
+        title: 'DraggableDemo',
+        desc: '拖拽动画',
+        isDone: true,
+        todo: ['DraggableDemo'],
     ),
     ToDoState(
       uniqueId: '3',
