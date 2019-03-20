@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_todolist/page/animated/custom-route.dart';
 import 'package:redux_todolist/page/animated/hero_demo.dart';
 import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
@@ -223,6 +224,8 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'ChipPage':
         push(ChipPage());
         break;
+      case 'CustomRouteFirstPage':
+        push(CustomRouteFirstPage());
       default:
         break;
     }

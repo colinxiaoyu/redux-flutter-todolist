@@ -52,6 +52,13 @@ class TodoList {
       isDone: true,
     ),
     ToDoState(
+      uniqueId: '2.1',
+      title: 'CustomRouteFirstPage',
+      desc: '两个页面切换 路由 重写路由动画',
+      isDone: true,
+      todo: ['CustomRouteFirstPage'],
+    ),
+    ToDoState(
       uniqueId: '3',
       title: 'HeroDemo',
       desc: '两个页面公用 一个 widget ，在切换页面时 widget 动态变化\n'
