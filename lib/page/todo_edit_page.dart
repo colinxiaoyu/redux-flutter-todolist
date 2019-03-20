@@ -16,6 +16,7 @@ import 'package:redux_todolist/page/example/bottom_appBar_demo.dart';
 import 'package:redux_todolist/page/example/chip_page.dart';
 import 'package:redux_todolist/page/example/expansion_demo/expansion_panel_list.dart';
 import 'package:redux_todolist/page/example/expansion_demo/expansion_tile.dart';
+import 'package:redux_todolist/page/example/frosted_glass_demo.dart';
 import 'package:redux_todolist/page/example/searchbar_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
@@ -246,6 +247,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'BottomNavigationKeepAlive':
         push(BottomNavigationKeepAlive());
+        break;
+      case 'FrostedGlassDemo':
+        push(FrostedGlassDemo());
         break;
 
       default:

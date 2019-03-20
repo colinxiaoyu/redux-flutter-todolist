@@ -90,7 +90,7 @@ class TodoList {
     ToDoState(
       uniqueId: '5',
       title: 'Stream',
-      desc: 'stream 相关应用',
+      desc: 'stream 相关应用 \n 基于 stream 有一个 Provide 框架 可以看看',
       isDone: false,
       todo: ['SimpleStreamPage','IMPage'],
     ),
@@ -107,6 +107,13 @@ class TodoList {
       desc: '可上下扩展，伸缩的 Expansion ',
       isDone: false,
       todo: ['ExpansionTileDemo','ExpansionPanelListDemo'],
+    ),
+    ToDoState(
+      uniqueId: '8',
+      title: 'Material 包内其他组件3',
+      desc: 'FrostedGlass 毛玻璃效果 ',
+      isDone: true,
+      todo: ['FrostedGlassDemo',],
     ),
   ];
 
