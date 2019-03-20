@@ -33,7 +33,7 @@ class TodoList {
       title: 'BottomNavigation',
       desc: 'BottomNavigation 相关的例子 ',
       isDone: false,
-      todo: ['BottomNavigationWidget'],
+      todo: ['BottomNavigationWidget','BottomNavigationKeepAlive'],
     ),
     ToDoState(
       uniqueId: '0',
