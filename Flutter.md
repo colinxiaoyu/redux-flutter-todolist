@@ -179,6 +179,17 @@ A widget with a preferred size.This widget does not impose any constraints on it
 - animation,
 ```
  Scaffold.of(context).showSnackBar(new SnackBar(content: new Text("FAB is Clicked"),));
+ Flutter SnakeBar弹不出来，报Scaffold.of() called with a context that does not contain a Scaffold.错误
+ var _scaffoldkey = new GlobalKey<ScaffoldState>();
+   @override
+   Widget build(BuildContext context) {
+     return Scaffold(
+         key: _scaffoldkey,）
+   }
+ void showSnackBar(String message) {
+    var snackBar = SnackBar(content: Text(message));
+    _scaffoldkey.currentState.showSnackBar(snackBar);
+ }
 ```
 
 ### CircleBorder extends ShapeBorder
