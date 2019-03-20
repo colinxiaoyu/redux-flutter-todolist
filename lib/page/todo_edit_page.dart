@@ -9,6 +9,7 @@ import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
 import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
+import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
 import 'package:redux_todolist/page/example/audio_screen.dart';
 import 'package:redux_todolist/page/example/bottom_appBar_demo.dart';
 import 'package:redux_todolist/page/example/chip_page.dart';
@@ -238,6 +239,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'ExpansionPanelListDemo':
         push(ExpansionPanelListDemo());
+        break;
+      case 'BottomNavigationWidget':
+        push(BottomNavigationWidget());
         break;
 
       default:

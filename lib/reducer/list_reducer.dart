@@ -29,6 +29,13 @@ class TodoList {
 
   static List<ToDoState> initToDos = <ToDoState>[
     ToDoState(
+      uniqueId: '8',
+      title: 'BottomNavigation',
+      desc: 'BottomNavigation 相关的例子 ',
+      isDone: false,
+      todo: ['BottomNavigationWidget'],
+    ),
+    ToDoState(
       uniqueId: '0',
       title: 'AnimatedContainerDemo',
       desc: '基础动画',
