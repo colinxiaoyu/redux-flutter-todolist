@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:redux_todolist/page/bottom_navigation/page_widget/airplay_screen.dart';
-import 'package:redux_todolist/page/bottom_navigation/page_widget/email_screen.dart';
-import 'package:redux_todolist/page/bottom_navigation/page_widget/home_screen.dart';
-import 'package:redux_todolist/page/bottom_navigation/page_widget/pages_screen.dart';
+import 'package:redux_todolist/page/bottom_navigation/pages_keep_alive/airplay_screen.dart';
+import 'package:redux_todolist/page/bottom_navigation/pages_keep_alive/email_screen.dart';
+import 'package:redux_todolist/page/bottom_navigation/pages_keep_alive/home_screen.dart';
+import 'package:redux_todolist/page/bottom_navigation/pages_keep_alive/pages_screen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
