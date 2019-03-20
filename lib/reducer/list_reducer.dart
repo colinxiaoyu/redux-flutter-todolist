@@ -92,7 +92,14 @@ class TodoList {
       title: 'Material 包内其他组件',
       desc: 'Material 为我们提供了许多丰富的小 widget，同时也提供了许多已经封装好的成熟的 widget，值得学习',
       isDone: false,
-      todo: ['SearchBarDemo','BottomAppBarDemo','ChipPage'],
+      todo: ['SearchBarDemo','BottomAppBarDemo','ChipPage','ExpansionTileDemo','ExpansionPanelListDemo'],
+    ),
+    ToDoState(
+      uniqueId: '7',
+      title: 'Material 包内其他组件2',
+      desc: '可上下扩展，伸缩的 Expansion ',
+      isDone: false,
+      todo: ['ExpansionTileDemo','ExpansionPanelListDemo'],
     ),
   ];
 
