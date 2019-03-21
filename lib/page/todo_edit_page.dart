@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux_todolist/page/animated/custom-route.dart';
 import 'package:redux_todolist/page/animated/draggable_demo.dart';
+import 'package:redux_todolist/page/animated/hero_basic_structure.dart';
 import 'package:redux_todolist/page/animated/hero_demo.dart';
+import 'package:redux_todolist/page/animated/hero_photo.dart';
 import 'package:redux_todolist/page/animated/spinner.dart';
 import 'package:redux_todolist/page/animated/animated_container_demo.dart';
 import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
@@ -22,6 +24,7 @@ import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
+import 'package:flutter/scheduler.dart' show timeDilation;
 
 class TodoEditPage extends StatefulWidget {
   final ToDoState item;
@@ -52,6 +55,12 @@ class _TodoEditPageState extends State<TodoEditPage> {
     title = item.title;
     desc = item.desc;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    timeDilation = 1.0;
+    super.dispose();
   }
 
   @override
@@ -251,7 +260,12 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'FrostedGlassDemo':
         push(FrostedGlassDemo());
         break;
-
+      case 'HeroPhoto':
+        push(HeroPhoto());
+        break;
+      case 'HeroBasicStructure':
+        push(HeroBasicStructure());
+        break;
       default:
         break;
     }

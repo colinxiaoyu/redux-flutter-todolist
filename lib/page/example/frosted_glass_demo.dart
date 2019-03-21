@@ -14,10 +14,10 @@ class FrostedGlassDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text('FrostedGlassDemo'),
       ),
-      body: new Stack(
+      body:  Stack(
         children: <Widget>[
           ConstrainedBox(
-              constraints: const BoxConstraints.expand(), child: FlutterLogo()),
+              constraints:  BoxConstraints.expand(), child: FlutterLogo()),
           Center(
             child: ClipRect(
               child: BackdropFilter(

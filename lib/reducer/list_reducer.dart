@@ -78,7 +78,7 @@ class TodoList {
       desc: '两个页面公用 一个 widget ，在切换页面时 widget 动态变化\n'
           'flutter 原生效果',
       isDone: true,
-      todo: ['HeroDemo'],
+      todo: ['HeroDemo','HeroPhoto','HeroBasicStructure'],
     ),
     ToDoState(
       uniqueId: '4',
