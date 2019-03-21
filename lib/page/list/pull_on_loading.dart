@@ -43,11 +43,10 @@ class _PullOnLoadingState extends State<PullOnLoading> {
         controller: _controller,
           itemCount: images.length,
           itemBuilder: (context, index) {
-            return Container(
-              child: Image.network(
+            return  Image.network(
                 images[index],
                 fit: BoxFit.cover,
-              ),
+
             );
           }),
     );
