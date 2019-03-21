@@ -28,7 +28,13 @@ class TodoList {
   List<ToDoState> list;
 
   static List<ToDoState> initToDos = <ToDoState>[
-
+    ToDoState(
+      uniqueId: '11',
+      title: 'List 上拉刷新，下拉加载等',
+      desc: 'List 从网络获取数据，渲染页面等一系列交互',
+      isDone: true,
+      todo: ['PullOnLoading',],
+    ),
     ToDoState(
       uniqueId: '0',
       title: 'AnimatedContainerDemo',

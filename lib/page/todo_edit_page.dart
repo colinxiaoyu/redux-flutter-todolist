@@ -24,6 +24,7 @@ import 'package:redux_todolist/page/example/intro_view_demo.dart';
 import 'package:redux_todolist/page/example/overlay_demo.dart';
 import 'package:redux_todolist/page/example/overlay_demo2.dart';
 import 'package:redux_todolist/page/example/searchbar_demo.dart';
+import 'package:redux_todolist/page/list/pull_on_loading.dart';
 import 'package:redux_todolist/page/state/keep_alive_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
@@ -282,9 +283,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'OverlayDemo2':
         push(OverlayDemo2());
         break;
-
-
-
+      case 'PullOnLoading':
+        push(PullOnLoading());
+        break;
       default:
         break;
     }
