@@ -28,13 +28,7 @@ class TodoList {
   List<ToDoState> list;
 
   static List<ToDoState> initToDos = <ToDoState>[
-    ToDoState(
-      uniqueId: '8',
-      title: 'BottomNavigation',
-      desc: 'BottomNavigation 相关的例子 ',
-      isDone: false,
-      todo: ['BottomNavigationWidget','BottomNavigationKeepAlive'],
-    ),
+
     ToDoState(
       uniqueId: '0',
       title: 'AnimatedContainerDemo',
@@ -116,6 +110,13 @@ class TodoList {
       todo: ['FrostedGlassDemo',],
     ),
     ToDoState(
+      uniqueId: '8.1',
+      title: 'BottomNavigation',
+      desc: 'BottomNavigation 相关的例子 ',
+      isDone: false,
+      todo: ['BottomNavigationWidget','BottomNavigationKeepAlive'],
+    ),
+    ToDoState(
       uniqueId: '9',
       title: 'IntroViewDemo',
       desc: '第三方库 intro_views_flutter: ^2.4.0 超炫的动画效果 ',
@@ -128,6 +129,13 @@ class TodoList {
       desc: 'KeepAliveDemo  页面切换时，保持页面的状态不消失  ',
       isDone: true,
       todo: ['KeepAliveDemo','BottomNavigationKeepAlive'],
+    ),
+    ToDoState(
+      uniqueId: '10',
+      title: 'OverlayDemo',
+      desc: 'Overla 相关API 以及注意事项',
+      isDone: true,
+      todo: ['OverlayDemo','OverlayDemo2'],
     ),
 
   ];

@@ -21,6 +21,8 @@ import 'package:redux_todolist/page/example/expansion_demo/expansion_panel_list.
 import 'package:redux_todolist/page/example/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/example/frosted_glass_demo.dart';
 import 'package:redux_todolist/page/example/intro_view_demo.dart';
+import 'package:redux_todolist/page/example/overlay_demo.dart';
+import 'package:redux_todolist/page/example/overlay_demo2.dart';
 import 'package:redux_todolist/page/example/searchbar_demo.dart';
 import 'package:redux_todolist/page/state/keep_alive_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
@@ -274,6 +276,14 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'KeepAliveDemo':
         push(KeepAliveDemo());
         break;
+      case 'OverlayDemo':
+        push(OverlayDemo());
+        break;
+      case 'OverlayDemo2':
+        push(OverlayDemo2());
+        break;
+
+
 
       default:
         break;
