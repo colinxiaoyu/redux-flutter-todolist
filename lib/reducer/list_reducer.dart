@@ -122,6 +122,14 @@ class TodoList {
       isDone: true,
       todo: ['IntroViewDemo',],
     ),
+    ToDoState(
+      uniqueId: '10',
+      title: 'KeepAlive',
+      desc: 'KeepAliveDemo  页面切换时，保持页面的状态不消失  ',
+      isDone: true,
+      todo: ['KeepAliveDemo','BottomNavigationKeepAlive'],
+    ),
+
   ];
 
   TodoList({this.list});
