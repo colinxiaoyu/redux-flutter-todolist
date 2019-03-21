@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+///实现原理是，利用ScrollController监听像素是否到达底部，再注入新数据
+///当然还有 一些地方需要修改：
+///1、当loading时 下拉加载更多应该无效
+///2、当前的手势状态，其实滑动到底部时，是否继续加载，由用户决定
 class PullOnLoading extends StatefulWidget {
   @override
   _PullOnLoadingState createState() {
@@ -20,6 +24,8 @@ class _PullOnLoadingState extends State<PullOnLoading> {
     fetchTen();
 
     _controller.addListener((){
+      print('_controller.position.pixels:${_controller.position.pixels}');
+      print('_controller.position.maxScrollExtent:${_controller.position.maxScrollExtent}');
       if(_controller.position.pixels == _controller.position.maxScrollExtent){
         fetchTen();
       }
