@@ -115,6 +115,13 @@ class TodoList {
       isDone: true,
       todo: ['FrostedGlassDemo',],
     ),
+    ToDoState(
+      uniqueId: '9',
+      title: 'IntroViewDemo',
+      desc: '第三方库 intro_views_flutter: ^2.4.0 超炫的动画效果 ',
+      isDone: true,
+      todo: ['IntroViewDemo',],
+    ),
   ];
 
   TodoList({this.list});
