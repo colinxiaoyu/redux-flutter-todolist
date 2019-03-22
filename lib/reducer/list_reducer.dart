@@ -112,7 +112,8 @@ class TodoList {
         'BottomAppBarDemo',
         'ChipPage',
         'ExpansionTileDemo',
-        'ExpansionPanelListDemo'
+        'ExpansionPanelListDemo',
+        'SliverScreen',
       ],
     ),
     ToDoState(
@@ -140,12 +141,12 @@ class TodoList {
     ),
     ToDoState(
       uniqueId: '9',
-      title: 'IntroViewDemo',
+      title: '第三方库',
       desc: '第三方库 intro_views_flutter: ^2.4.0'
-          ' intro_slider: ^1.1.9  超炫的动画效果 ',
+          ' intro_slider: ^1.1.9  Spinkit小UI动画 超炫的动画效果 ',
       isDone: true,
       todo: [
-        'IntroViewDemo','SliderScreen',
+        'IntroViewDemo','SliderScreen','Spinkit',
       ],
     ),
 

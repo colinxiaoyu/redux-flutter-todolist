@@ -27,6 +27,7 @@ import 'package:redux_todolist/page/material/chip_page.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_panel_list.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/material/frosted_glass_demo.dart';
+import 'package:redux_todolist/page/material/sliver_demo.dart';
 import 'package:redux_todolist/page/third_party/intro_slider_demo.dart';
 import 'package:redux_todolist/page/third_party/intro_view_demo.dart';
 import 'package:redux_todolist/page/material/overlay_demo.dart';
@@ -40,6 +41,7 @@ import 'package:redux_todolist/page/list/recordable_list_view_demo.dart';
 import 'package:redux_todolist/page/state/keep_alive_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
+import 'package:redux_todolist/page/third_party/spinkit_demo.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
@@ -333,6 +335,12 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'TimerPickerDemo':
         push(TimerPickerDemo());
+        break;
+      case 'SliverScreen':
+        push(SliverScreen());
+        break;
+      case 'Spinkit':
+        push(Spinkit());
         break;
 
       default:
