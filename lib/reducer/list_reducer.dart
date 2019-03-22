@@ -33,7 +33,7 @@ class TodoList {
       title: 'List 上拉刷新，下拉加载等',
       desc: 'List 从网络获取数据，渲染页面等一系列交互',
       isDone: false,
-      todo: ['PullOnLoading',],
+      todo: ['PullOnLoading','PullToRefresh'],
     ),
     ToDoState(
       uniqueId: '0',

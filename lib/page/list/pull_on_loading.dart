@@ -6,6 +6,7 @@ import 'dart:convert';
 ///当然还有 一些地方需要修改：
 ///1、当loading时 下拉加载更多应该无效
 ///2、当前的手势状态，其实滑动到底部时，是否继续加载，由用户决定
+///3、底部插入loading item
 class PullOnLoading extends StatefulWidget {
   @override
   _PullOnLoadingState createState() {
