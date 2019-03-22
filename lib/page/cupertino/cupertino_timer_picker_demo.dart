@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class TimerPickerDemo extends StatefulWidget {
   @override
@@ -20,11 +21,11 @@ class _TimerPickerDemoState extends State<TimerPickerDemo> {
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text('TimerPickerDemo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TimerPickerDemo'),
       ),
-        child: Center(
+        body: Center(
       child: Container(
         width: width,
         height: height / 4,
