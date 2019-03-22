@@ -31,9 +31,10 @@ class TodoList {
     ToDoState(
       uniqueId: '11',
       title: 'List 上拉刷新，下拉加载等',
-      desc: 'List 从网络获取数据，渲染页面等一系列交互',
+      desc: 'List 从网络获取数据，渲染页面等一系列交互,其中 RecordableListViewDemo '
+          '是可以拖动item 到其他位置',
       isDone: false,
-      todo: ['PullOnLoading','PullToRefresh','PullDownRefreshPullUp','GridViewDemo'],
+      todo: ['PullOnLoading','PullToRefresh','PullDownRefreshPullUp','GridViewDemo','RecordableListViewDemo'],
     ),
     ToDoState(
       uniqueId: '0',
