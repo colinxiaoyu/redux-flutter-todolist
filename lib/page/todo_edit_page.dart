@@ -27,7 +27,8 @@ import 'package:redux_todolist/page/material/chip_page.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_panel_list.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/material/frosted_glass_demo.dart';
-import 'package:redux_todolist/page/material/intro_view_demo.dart';
+import 'package:redux_todolist/page/third_party/intro_slider_demo.dart';
+import 'package:redux_todolist/page/third_party/intro_view_demo.dart';
 import 'package:redux_todolist/page/material/overlay_demo.dart';
 import 'package:redux_todolist/page/material/overlay_demo2.dart';
 import 'package:redux_todolist/page/material/searchbar_demo.dart';
@@ -284,6 +285,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'IntroViewDemo':
         push(IntroViewDemo());
+        break;
+      case 'SliderScreen':
+        push(SliderScreen());
         break;
       case 'KeepAliveDemo':
         push(KeepAliveDemo());
