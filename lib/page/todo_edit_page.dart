@@ -15,6 +15,9 @@ import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_alive.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
 import 'package:redux_todolist/page/cupertino/action_sheet_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_navigation_bar_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_picker_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_segmented_control_demo.dart';
 import 'package:redux_todolist/page/material//audio_screen.dart';
 import 'package:redux_todolist/page/material/bottom_appBar_demo.dart';
 import 'package:redux_todolist/page/material/chip_page.dart';
@@ -306,6 +309,16 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'ActionSheetDemo':
         push(ActionSheetDemo());
         break;
+      case 'NavigationBarDemo':
+        push(NavigationBarDemo());
+        break;
+      case 'PickerDemo':
+        push(PickerDemo());
+        break;
+      case 'SegmentedControlDemo':
+        push(SegmentedControlDemo());
+        break;
+
 
       default:
         break;

@@ -33,7 +33,7 @@ class TodoList {
       title: 'Cupertino 包内其他组件',
       desc: 'Cupertino 风格的一些组件，先看看效果，',
       isDone: false,
-      todo: ['ActionSheetDemo'],
+      todo: ['ActionSheetDemo','NavigationBarDemo','PickerDemo','SegmentedControlDemo'],
     ),
     ToDoState(
       uniqueId: '0',
