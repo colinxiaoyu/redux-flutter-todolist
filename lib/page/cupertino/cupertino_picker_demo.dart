@@ -35,7 +35,7 @@ class _PickerDemoState extends State<PickerDemo> {
               backgroundColor: CupertinoColors.white,
               onSelectedItemChanged: (int index) {},
               children: [
-                Text('Test1'),
+                Text('Test1',style: TextStyle(decoration: TextDecoration.none),),
                 Text('Test2'),
                 Text('Test3'),
                 Text('Test4'),

@@ -18,6 +18,9 @@ import 'package:redux_todolist/page/cupertino/action_sheet_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_navigation_bar_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_picker_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_segmented_control_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_sliver_navigation_bar_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_tab_navigation_demo.dart';
+import 'package:redux_todolist/page/cupertino/cupertino_timer_picker_demo.dart';
 import 'package:redux_todolist/page/material//audio_screen.dart';
 import 'package:redux_todolist/page/material/bottom_appBar_demo.dart';
 import 'package:redux_todolist/page/material/chip_page.dart';
@@ -318,7 +321,15 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'SegmentedControlDemo':
         push(SegmentedControlDemo());
         break;
-
+      case 'SliverNavigationBarDemo':
+        push(SliverNavigationBarDemo());
+        break;
+      case 'TabNavigationDemo':
+        push(TabNavigationDemo());
+        break;
+      case 'TimerPickerDemo':
+        push(TimerPickerDemo());
+        break;
 
       default:
         break;

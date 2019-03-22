@@ -7,7 +7,7 @@ class NavigationBarDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          leading: Text('Leading'),
+//          leading: Text('Leading'),
 //          previousPageTitle: "previousPageTitle",
           middle: Text('middle'),
           trailing: Icon(CupertinoIcons.search),

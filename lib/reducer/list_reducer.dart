@@ -33,7 +33,15 @@ class TodoList {
       title: 'Cupertino 包内其他组件',
       desc: 'Cupertino 风格的一些组件，先看看效果，',
       isDone: false,
-      todo: ['ActionSheetDemo','NavigationBarDemo','PickerDemo','SegmentedControlDemo'],
+      todo: [
+        'ActionSheetDemo',
+        'NavigationBarDemo',
+        'PickerDemo',
+        'SegmentedControlDemo',
+        'SliverNavigationBarDemo',
+        'TabNavigationDemo',
+        'TimerPickerDemo'
+      ],
     ),
     ToDoState(
       uniqueId: '0',
@@ -53,9 +61,9 @@ class TodoList {
       uniqueId: '2.0',
       title: '重点HideBottomBarDemo',
       desc: 'listview上下滑动时自动隐藏 底部 \n'
-        '需要掌握 AnimatedBuilder Animation.animate 等动画\n'
+          '需要掌握 AnimatedBuilder Animation.animate 等动画\n'
           '官网例子 Spinner',
-      todo: ['HideBottomBarDemo','SpinnerDemo'],
+      todo: ['HideBottomBarDemo', 'SpinnerDemo'],
       isDone: true,
     ),
     ToDoState(
@@ -66,11 +74,11 @@ class TodoList {
       todo: ['CustomRouteFirstPage'],
     ),
     ToDoState(
-        uniqueId: '2.2',
-        title: 'DraggableDemo',
-        desc: '拖拽动画',
-        isDone: true,
-        todo: ['DraggableDemo'],
+      uniqueId: '2.2',
+      title: 'DraggableDemo',
+      desc: '拖拽动画',
+      isDone: true,
+      todo: ['DraggableDemo'],
     ),
     ToDoState(
       uniqueId: '3',
@@ -78,7 +86,7 @@ class TodoList {
       desc: '两个页面公用 一个 widget ，在切换页面时 widget 动态变化\n'
           'flutter 原生效果',
       isDone: true,
-      todo: ['HeroDemo','HeroPhoto','HeroBasicStructure'],
+      todo: ['HeroDemo', 'HeroPhoto', 'HeroBasicStructure'],
     ),
     ToDoState(
       uniqueId: '4',
@@ -92,50 +100,59 @@ class TodoList {
       title: 'Stream',
       desc: 'stream 相关应用 \n 基于 stream 有一个 Provide 框架 可以看看',
       isDone: false,
-      todo: ['SimpleStreamPage','IMPage'],
+      todo: ['SimpleStreamPage', 'IMPage'],
     ),
     ToDoState(
       uniqueId: '6',
       title: 'Material 包内其他组件',
       desc: 'Material 为我们提供了许多丰富的小 widget，同时也提供了许多已经封装好的成熟的 widget，值得学习',
       isDone: false,
-      todo: ['SearchBarDemo','BottomAppBarDemo','ChipPage','ExpansionTileDemo','ExpansionPanelListDemo'],
+      todo: [
+        'SearchBarDemo',
+        'BottomAppBarDemo',
+        'ChipPage',
+        'ExpansionTileDemo',
+        'ExpansionPanelListDemo'
+      ],
     ),
     ToDoState(
       uniqueId: '6.1',
       title: 'Material 包内其他组件2',
       desc: '可上下扩展，伸缩的 Expansion ',
       isDone: false,
-      todo: ['ExpansionTileDemo','ExpansionPanelListDemo'],
+      todo: ['ExpansionTileDemo', 'ExpansionPanelListDemo'],
     ),
-
     ToDoState(
       uniqueId: '8',
       title: 'Material 包内其他组件3',
       desc: 'FrostedGlass 毛玻璃效果 ',
       isDone: true,
-      todo: ['FrostedGlassDemo',],
+      todo: [
+        'FrostedGlassDemo',
+      ],
     ),
     ToDoState(
       uniqueId: '8.1',
       title: 'BottomNavigation',
       desc: 'BottomNavigation 相关的例子 ',
       isDone: false,
-      todo: ['BottomNavigationWidget','BottomNavigationKeepAlive'],
+      todo: ['BottomNavigationWidget', 'BottomNavigationKeepAlive'],
     ),
     ToDoState(
       uniqueId: '9',
       title: 'IntroViewDemo',
       desc: '第三方库 intro_views_flutter: ^2.4.0 超炫的动画效果 ',
       isDone: true,
-      todo: ['IntroViewDemo',],
+      todo: [
+        'IntroViewDemo',
+      ],
     ),
     ToDoState(
       uniqueId: '10',
       title: 'KeepAlive',
       desc: 'KeepAliveDemo  页面切换时，保持页面的状态不消失  ',
       isDone: true,
-      todo: ['KeepAliveDemo','BottomNavigationKeepAlive'],
+      todo: ['KeepAliveDemo', 'BottomNavigationKeepAlive'],
     ),
     ToDoState(
       uniqueId: '11',
@@ -143,16 +160,21 @@ class TodoList {
       desc: 'List 从网络获取数据，渲染页面等一系列交互,其中 RecordableListViewDemo '
           '是可以拖动item 到其他位置',
       isDone: false,
-      todo: ['PullOnLoading','PullToRefresh','PullDownRefreshPullUp','GridViewDemo','RecordableListViewDemo'],
+      todo: [
+        'PullOnLoading',
+        'PullToRefresh',
+        'PullDownRefreshPullUp',
+        'GridViewDemo',
+        'RecordableListViewDemo'
+      ],
     ),
     ToDoState(
       uniqueId: '12',
       title: 'OverlayDemo',
       desc: 'Overla 相关API 以及注意事项',
       isDone: true,
-      todo: ['OverlayDemo','OverlayDemo2'],
+      todo: ['OverlayDemo', 'OverlayDemo2'],
     ),
-
   ];
 
   TodoList({this.list});
