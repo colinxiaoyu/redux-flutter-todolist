@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:redux_todolist/page/example/general_page.dart';
+import 'package:redux_todolist/page/material/general_page.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 

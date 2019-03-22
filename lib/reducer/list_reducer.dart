@@ -29,12 +29,11 @@ class TodoList {
 
   static List<ToDoState> initToDos = <ToDoState>[
     ToDoState(
-      uniqueId: '11',
-      title: 'List 上拉刷新，下拉加载等',
-      desc: 'List 从网络获取数据，渲染页面等一系列交互,其中 RecordableListViewDemo '
-          '是可以拖动item 到其他位置',
+      uniqueId: '7',
+      title: 'Cupertino 包内其他组件',
+      desc: 'Cupertino 风格的一些组件，先看看效果，',
       isDone: false,
-      todo: ['PullOnLoading','PullToRefresh','PullDownRefreshPullUp','GridViewDemo','RecordableListViewDemo'],
+      todo: ['ActionSheetDemo'],
     ),
     ToDoState(
       uniqueId: '0',
@@ -103,12 +102,13 @@ class TodoList {
       todo: ['SearchBarDemo','BottomAppBarDemo','ChipPage','ExpansionTileDemo','ExpansionPanelListDemo'],
     ),
     ToDoState(
-      uniqueId: '7',
+      uniqueId: '6.1',
       title: 'Material 包内其他组件2',
       desc: '可上下扩展，伸缩的 Expansion ',
       isDone: false,
       todo: ['ExpansionTileDemo','ExpansionPanelListDemo'],
     ),
+
     ToDoState(
       uniqueId: '8',
       title: 'Material 包内其他组件3',
@@ -138,7 +138,15 @@ class TodoList {
       todo: ['KeepAliveDemo','BottomNavigationKeepAlive'],
     ),
     ToDoState(
-      uniqueId: '10',
+      uniqueId: '11',
+      title: 'List 上拉刷新，下拉加载等',
+      desc: 'List 从网络获取数据，渲染页面等一系列交互,其中 RecordableListViewDemo '
+          '是可以拖动item 到其他位置',
+      isDone: false,
+      todo: ['PullOnLoading','PullToRefresh','PullDownRefreshPullUp','GridViewDemo','RecordableListViewDemo'],
+    ),
+    ToDoState(
+      uniqueId: '12',
       title: 'OverlayDemo',
       desc: 'Overla 相关API 以及注意事项',
       isDone: true,

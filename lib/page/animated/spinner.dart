@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import "dart:math";
 
-import 'package:redux_todolist/page/example/general_page.dart';
+import 'package:redux_todolist/page/material/general_page.dart';
 
 /// 几个要点
 /// 1、需注入 SingleTickerProviderStateMixin 单个动画钩子，注意 state 只作用于一个 AnimationController
