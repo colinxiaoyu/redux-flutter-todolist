@@ -36,7 +36,7 @@ class _PullDownRefreshPullUpState extends State<PullDownRefreshPullUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('pull to loading demo'),
+        title: Text('PullDownRefreshPullUp'),
       ),
       body: RefreshIndicator(
         onRefresh: () async {

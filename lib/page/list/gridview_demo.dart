@@ -36,7 +36,7 @@ class _GridViewDemoState extends State<GridViewDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('pull to loading demo'),
+        title: Text('GridViewDemo'),
       ),
       body: RefreshIndicator(
         onRefresh: () async {
