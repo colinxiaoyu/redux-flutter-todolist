@@ -24,6 +24,7 @@ import 'package:redux_todolist/page/example/intro_view_demo.dart';
 import 'package:redux_todolist/page/example/overlay_demo.dart';
 import 'package:redux_todolist/page/example/overlay_demo2.dart';
 import 'package:redux_todolist/page/example/searchbar_demo.dart';
+import 'package:redux_todolist/page/list/gridview_demo.dart';
 import 'package:redux_todolist/page/list/pull_down_refresh_pull_up_load.dart';
 import 'package:redux_todolist/page/list/pull_on_loading.dart';
 import 'package:redux_todolist/page/list/pull_to_refresh.dart';
@@ -294,6 +295,10 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'PullDownRefreshPullUp':
         push(PullDownRefreshPullUp());
         break;
+      case 'GridViewDemo':
+        push(GridViewDemo());
+        break;
+
       default:
         break;
     }
