@@ -814,9 +814,18 @@ ButtonTheme(
 #### FlatButton 
 扁平化的按钮，继承自MaterialButton
 #### OutlineButton
-带边框的按钮，继承自MaterialButton
+带边框的按钮，继承自MaterialButton 
 #### IconButton	
 图标按钮,继承自StatelessWidget
+### ButtonBar
+An end-aligned row of buttons.
+```
+    ButtonBar(
+        children: <Widget>[
+            RaisedButton(onPressed: (){},child: Text('login'),color: Colors.white,)
+        ],
+        )
+```
 
 
 

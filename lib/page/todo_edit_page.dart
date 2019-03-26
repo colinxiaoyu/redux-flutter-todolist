@@ -14,6 +14,7 @@ import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_alive.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
+import 'package:redux_todolist/page/common/textfields_focus_demo.dart';
 import 'package:redux_todolist/page/cupertino/action_sheet_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_navigation_bar_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_picker_demo.dart';
@@ -28,7 +29,7 @@ import 'package:redux_todolist/page/material/expansion_demo/expansion_panel_list
 import 'package:redux_todolist/page/material/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/material/frosted_glass_demo.dart';
 import 'package:redux_todolist/page/material/sliver_demo.dart';
-import 'package:redux_todolist/page/splash_screen.dart';
+import 'package:redux_todolist/page/common/splash_screen.dart';
 import 'package:redux_todolist/page/third_party/intro_slider_demo.dart';
 import 'package:redux_todolist/page/third_party/intro_view_demo.dart';
 import 'package:redux_todolist/page/material/overlay_demo.dart';
@@ -346,7 +347,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'SplashScreen':
         push(SplashScreen());
         break;
-
+      case 'TextFieldFocusDemo':
+        push(TextFieldFocusDemo());
+        break;
       default:
         break;
     }
