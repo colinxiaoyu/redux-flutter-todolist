@@ -28,21 +28,7 @@ class TodoList {
   List<ToDoState> list;
 
   static List<ToDoState> initToDos = <ToDoState>[
-    ToDoState(
-      uniqueId: '7',
-      title: 'Cupertino 包内其他组件',
-      desc: 'Cupertino 风格的一些组件，先看看效果，',
-      isDone: false,
-      todo: [
-        'ActionSheetDemo',
-        'NavigationBarDemo',
-        'PickerDemo',
-        'SegmentedControlDemo',
-        'SliverNavigationBarDemo',
-        'TabNavigationDemo',
-        'TimerPickerDemo'
-      ],
-    ),
+
     ToDoState(
       uniqueId: '0',
       title: 'AnimatedContainerDemo',
@@ -124,6 +110,21 @@ class TodoList {
       todo: ['ExpansionTileDemo', 'ExpansionPanelListDemo'],
     ),
     ToDoState(
+      uniqueId: '7',
+      title: 'Cupertino 包内其他组件',
+      desc: 'Cupertino 风格的一些组件，先看看效果，',
+      isDone: false,
+      todo: [
+        'ActionSheetDemo',
+        'NavigationBarDemo',
+        'PickerDemo',
+        'SegmentedControlDemo',
+        'SliverNavigationBarDemo',
+        'TabNavigationDemo',
+        'TimerPickerDemo'
+      ],
+    ),
+    ToDoState(
       uniqueId: '8',
       title: 'Material 包内其他组件3',
       desc: 'FrostedGlass 毛玻璃效果 ',
@@ -143,7 +144,7 @@ class TodoList {
       uniqueId: '9',
       title: '第三方库',
       desc: '第三方库 intro_views_flutter: ^2.4.0'
-          ' intro_slider: ^1.1.9  Spinkit小UI动画 超炫的动画效果 ',
+          ' intro_slider: ^1.1.9  Spinkit小UI动画 超炫的动画效果 url_launcher学习',
       isDone: true,
       todo: [
         'IntroViewDemo',
