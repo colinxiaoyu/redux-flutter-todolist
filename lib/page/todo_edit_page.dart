@@ -15,6 +15,7 @@ import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_alive.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
 import 'package:redux_todolist/page/common/textfields_focus_demo.dart';
+import 'package:redux_todolist/page/common/tool_tips_demo.dart';
 import 'package:redux_todolist/page/cupertino/action_sheet_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_navigation_bar_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_picker_demo.dart';
@@ -350,6 +351,10 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'TextFieldFocusDemo':
         push(TextFieldFocusDemo());
         break;
+      case 'ToolTipDemo':
+        push(ToolTipDemo());
+        break;
+
       default:
         break;
     }
