@@ -1,5 +1,5 @@
 ///**
-/// * 通过 renderobject 获取控件中心位置
+/// * 通过 renderobject 获取控件中心位置，具体可以看看 ReorderableListView 的源码
 /// */
 import 'package:flutter/material.dart';
 
