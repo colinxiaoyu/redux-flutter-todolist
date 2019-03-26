@@ -3,9 +3,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Spinkit extends StatelessWidget {
 
-  Color _color = Colors.blue;
   @override
   Widget build(BuildContext context) {
+    Color _color = Colors.blue;
+
     return Scaffold(
 
       appBar: AppBar(
