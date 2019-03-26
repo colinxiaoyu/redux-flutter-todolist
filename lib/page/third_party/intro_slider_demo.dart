@@ -4,18 +4,18 @@ import 'package:redux_todolist/page/todo_list_page.dart';
 
 class SliderScreen extends StatefulWidget {
   @override
-  _SliderScreenState createState() => new _SliderScreenState();
+  _SliderScreenState createState() =>  _SliderScreenState();
 }
 
 class _SliderScreenState extends State<SliderScreen> {
-  List<Slide> slides = new List();
+  List<Slide> slides =  List();
 
   @override
   void initState() {
     super.initState();
 
     slides.add(
-      new Slide(
+       Slide(
         title: "FLUTTER",
         description:
             "Get Faster Development, Flexible UI & Access Native Features. Learn More! High-Quality Interfaces. Flexible UI. Fast Development.",
@@ -24,7 +24,7 @@ class _SliderScreenState extends State<SliderScreen> {
       ),
     );
     slides.add(
-      new Slide(
+       Slide(
         title: "DART",
         description:
             "Developers at Google and elsewhere use Dart to create high-quality, mission-critical apps for iOS, Android, and the web. With features aimed at client-side development, Dart is a great fit for both mobile and web apps.",
@@ -33,7 +33,7 @@ class _SliderScreenState extends State<SliderScreen> {
       ),
     );
     slides.add(
-      new Slide(
+       Slide(
         title: "WELECOME",
         description: "开始你的app",
         pathImage: "assets/images/flutterlogo.png",
@@ -44,13 +44,13 @@ class _SliderScreenState extends State<SliderScreen> {
 
   void onDonePress() {
     Navigator.of(context).pushAndRemoveUntil(
-        new MaterialPageRoute(builder: (context) => TodoListPage()),
+         MaterialPageRoute(builder: (context) => TodoListPage()),
         (route) => route == null);
   }
 
   void onSkipPress() {
     Navigator.of(context).pushAndRemoveUntil(
-        new MaterialPageRoute(builder: (context) => TodoListPage()),
+         MaterialPageRoute(builder: (context) => TodoListPage()),
         (route) => route == null);
   }
 

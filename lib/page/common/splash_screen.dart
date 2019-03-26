@@ -37,9 +37,9 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return new FadeTransition(
+    return  FadeTransition(
       opacity: _animation,
-      child: new Image.asset(
+      child:  Image.asset(
         'assets/photo.jpg',
         scale: 2.0,
         fit: BoxFit.cover,

@@ -66,7 +66,7 @@ class TodoListPage extends StatelessWidget {
 
   ///渲染每个Item
   List<Widget> _getItem(List<ToDoState> list) {
-    List<Widget> newList = new List();
+    List<Widget> newList =  List();
     newList.add(_getTitle(list));
     list.forEach((item) {
       newList.add(Item(item));

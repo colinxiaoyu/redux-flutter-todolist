@@ -14,6 +14,7 @@ import 'package:redux_todolist/page/animated/animated_cross_fade_demo.dart';
 import 'package:redux_todolist/page/animated/hide_bottom_bar.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_alive.dart';
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
+import 'package:redux_todolist/page/common/form_pop_demo.dart';
 import 'package:redux_todolist/page/common/textfields_focus_demo.dart';
 import 'package:redux_todolist/page/common/tool_tips_demo.dart';
 import 'package:redux_todolist/page/common/will_pop_scpoe_demo.dart';
@@ -373,6 +374,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'WillPopScopeDemo':
         push(WillPopScopeDemo());
+        break;
+      case 'FormPopDemo':
+        push(FormPopDemo());
         break;
 
 

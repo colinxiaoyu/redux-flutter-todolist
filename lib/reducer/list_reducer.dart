@@ -28,7 +28,6 @@ class TodoList {
   List<ToDoState> list;
 
   static List<ToDoState> initToDos = <ToDoState>[
-
     ToDoState(
       uniqueId: '0',
       title: 'AnimatedContainerDemo',
@@ -188,7 +187,13 @@ class TodoList {
       title: '普通组件 Common SplashScreen Focus 等基础的小例子',
       desc: 'SplashScreen 淡出动画 ，Focus 的获取与失去',
       isDone: true,
-      todo: ['SplashScreen', 'TextFieldFocusDemo','WrapDemo','WillPopScopeDemo'],
+      todo: [
+        'SplashScreen',
+        'TextFieldFocusDemo',
+        'WrapDemo',
+        'WillPopScopeDemo',
+        'FormPopDemo'
+      ],
     ),
   ];
 

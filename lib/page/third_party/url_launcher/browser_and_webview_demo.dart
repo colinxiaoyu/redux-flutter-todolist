@@ -33,7 +33,7 @@ class _UrlLauncherDemoState extends State<UrlLauncherDemo> {
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
     if (snapshot.hasError) {
-      return new Text('Error: ${snapshot.error}');
+      return  Text('Error: ${snapshot.error}');
     } else {
       return const Text('成功');
     }
@@ -43,29 +43,29 @@ class _UrlLauncherDemoState extends State<UrlLauncherDemo> {
   Widget build(BuildContext context) {
     const String url = 'https://www.baidu.com';
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("url launcher demo"),
+    return  Scaffold(
+      appBar:  AppBar(
+        title:  Text("url launcher demo"),
       ),
-      body: new Center(
-        child: new Column(
+      body:  Center(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new RaisedButton(
+             RaisedButton(
               onPressed: () => setState(() {
                 _launched = _launchInBrowser(url);
               }),
               child: const Text('Launch in browser'),
             ),
-            const Padding(padding: const EdgeInsets.all(16.0)),
-            new RaisedButton(
+             Padding(padding:  EdgeInsets.all(16.0)),
+             RaisedButton(
               onPressed: () => setState(() {
                 _launched = _launchInWebViewOrVC(url);
               }),
               child: const Text('Launch in app'),
             ),
-            const Padding(padding: const EdgeInsets.all(16.0)),
-            new FutureBuilder<Null>(future: _launched, builder: _launchStatus),
+             Padding(padding:  EdgeInsets.all(16.0)),
+             FutureBuilder<Null>(future: _launched, builder: _launchStatus),
           ],
         ),
       ),

@@ -19,16 +19,16 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return  Scaffold(
       body: _eachView[_index],
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton:  FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
             return EachView('New Page');
           }));
         },
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child:  Icon(Icons.add),
       ), // T
       floatingActionButtonLocation:
           FloatingActionButtonLocation.centerDocked, // his

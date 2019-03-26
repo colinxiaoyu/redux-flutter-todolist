@@ -26,9 +26,9 @@ class _EmailLauncherDemoState extends State<EmailLauncherDemo> {
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
     if (snapshot.hasError) {
-      return new Text('Error: ${snapshot.error}');
+      return  Text('Error: ${snapshot.error}');
     } else {
-      return const Text('');
+      return  Text('');
     }
   }
 
@@ -37,22 +37,22 @@ class _EmailLauncherDemoState extends State<EmailLauncherDemo> {
     const String email = '1652219550a@gmail.com';
     const String subject = 'email test';
     const String body = '这是一次email测试';
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("email launcher demo"),
+    return  Scaffold(
+      appBar:  AppBar(
+        title:  Text("email launcher demo"),
       ),
-      body: new Center(
-        child: new Column(
+      body:  Center(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new RaisedButton(
+             RaisedButton(
               onPressed: () => setState(() {
                     _launched = _sendEmail(email,subject,body);
                   }),
-              child: const Text('Send a email'),
+              child:  Text('Send a email'),
             ),
-            const Padding(padding: const EdgeInsets.all(16.0)),
-            new FutureBuilder<Null>(future: _launched, builder: _launchStatus),
+             Padding(padding:  EdgeInsets.all(16.0)),
+             FutureBuilder<Null>(future: _launched, builder: _launchStatus),
           ],
         ),
       ),

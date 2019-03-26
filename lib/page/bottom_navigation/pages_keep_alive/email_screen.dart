@@ -25,24 +25,24 @@ class _EmailScreenState extends State<EmailScreen>
       appBar: AppBar(
         title: Text('EmailScreen'),
       ),
-      body: new Center(
-        child: new Column(
+      body:  Center(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(
+             Text(
               'You have pushed the button this many times:',
             ),
-            new Text(
+             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton:  FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: new Icon(Icons.add),
+        child:  Icon(Icons.add),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ChipPage extends StatelessWidget {
-  var _scaffoldkey = new GlobalKey<ScaffoldState>();
+  var _scaffoldkey =  GlobalKey<ScaffoldState>();
 
   void showSnackBar(String message) {
     var snackBar = SnackBar(content: Text(message));

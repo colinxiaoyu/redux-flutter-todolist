@@ -33,9 +33,9 @@ class _TelAndSMSDemoState extends State<TelAndSMSDemo> {
 
   Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
     if (snapshot.hasError) {
-      return new Text('Error: ${snapshot.error}');
+      return  Text('Error: ${snapshot.error}');
     } else {
-      return const Text('');
+      return  Text('');
     }
   }
 
@@ -43,29 +43,29 @@ class _TelAndSMSDemoState extends State<TelAndSMSDemo> {
   Widget build(BuildContext context) {
     const String url = '12393748294';
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("tel and sms demo"),
+    return  Scaffold(
+      appBar:  AppBar(
+        title:  Text("tel and sms demo"),
       ),
-      body: new Center(
-        child: new Column(
+      body:  Center(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new RaisedButton(
+             RaisedButton(
               onPressed: () => setState(() {
                 _launched = _makeAPhoneCall(url);
               }),
               child: const Text('make a phone call'),
             ),
-            const Padding(padding: const EdgeInsets.all(16.0)),
-            new RaisedButton(
+             Padding(padding:  EdgeInsets.all(16.0)),
+             RaisedButton(
               onPressed: () => setState(() {
                 _launched = _sendAMessage(url);
               }),
               child: const Text('send a message'),
             ),
-            const Padding(padding: const EdgeInsets.all(16.0)),
-            new FutureBuilder<Null>(future: _launched, builder: _launchStatus),
+             Padding(padding:  EdgeInsets.all(16.0)),
+             FutureBuilder<Null>(future: _launched, builder: _launchStatus),
           ],
         ),
       ),

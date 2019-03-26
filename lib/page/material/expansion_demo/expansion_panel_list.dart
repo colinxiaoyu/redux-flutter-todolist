@@ -27,8 +27,8 @@ class _ExpansionPanelListDemoState extends State<ExpansionPanelListDemo> {
   List<ExpandStateBean> expandStateList;
 
   _ExpansionPanelListDemoState() {
-    mList = new List();
-    expandStateList = new List();
+    mList =  List();
+    expandStateList =  List();
     for (int i = 0; i < 10; i++) {
       mList.add(i);
       expandStateList.add(ExpandStateBean(i, false));
@@ -57,10 +57,10 @@ class _ExpansionPanelListDemoState extends State<ExpansionPanelListDemo> {
               _setCurrentIndex(index, bol);
             },
             children: mList.map((index) {
-              return new ExpansionPanel(
+              return  ExpansionPanel(
                 headerBuilder: (context, isExpanded) {
-                  return new ListTile(
-                    title: new Text('This is NO. $index'),
+                  return  ListTile(
+                    title:  Text('This is NO. $index'),
                   );
                 },
                 body: ListTile(

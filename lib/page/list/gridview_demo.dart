@@ -40,12 +40,12 @@ class _GridViewDemoState extends State<GridViewDemo> {
       ),
       body: RefreshIndicator(
         onRefresh: () async {
-          await new Future.delayed(const Duration(seconds: 1));
+          await  Future.delayed(const Duration(seconds: 1));
           images.clear();
           fetchTen();
         },
         child: GridView.builder(
-          gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 10.0,
               crossAxisSpacing: 10.0,
