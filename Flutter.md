@@ -963,7 +963,19 @@ Useful for attaching a key to an existing widget.
 - Key key：(ValueKey)
 - @required child
  
-
-
+### Material
+A piece of material.修饰性组件，给子组件赋予一些属性
+- type = MaterialType.canvas, `The kind of material to show (e.g., card or canvas). This
+affects the shape of the widget, the roundness of its corners if
+the shape is rectangular, and the default color.`
+- elevation = 0.0,
+- color,
+- shadowColor = const Color(0xFF000000),
+- textStyle,
+- borderRadius,
+- shape,
+- clipBehavior = Clip.none,
+- animationDuration = kThemeChangeDuration,
+- child,
 
 

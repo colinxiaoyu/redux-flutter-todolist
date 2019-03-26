@@ -27,9 +27,16 @@ class TextFieldFocusDemoState extends State<TextFieldFocusDemo> {
   }
 
   @override
+  void dispose() {
+    _nameController.dispose();
+    _pwController.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: AppBar(title: Text('TextFieldFocusDemo'),),
       body: SafeArea(
         child: Column(
           children: <Widget>[
