@@ -47,6 +47,7 @@ flutter:
     - assets/images/flutter.png
     - assets/images/dart.png
     - assets/images/flutterlogo.png
+    - assets/photo.jpg
     - assets/
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

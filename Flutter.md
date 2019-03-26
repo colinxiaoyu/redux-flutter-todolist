@@ -846,6 +846,13 @@ _animationController = AnimationController(
 Called every time the animation changes value.每一帧动画重新调用
 - child:供 builder 方法调用，描述 builder 内部组件
 
+### Flutter 封装的几种动画
+- FadeTransition  透明度变化
+- ScaleTransition 等比例 缩放
+- RotationTransition 角度旋转
+- SlideTransition 幻动片播放
+- AnimatedCrossFade 交叉 透明度变化
+
 
 ### StreamController
 1. 基本用途：A controller with the stream it controls. 流的控制器，创建流的方式之一；

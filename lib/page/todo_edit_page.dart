@@ -28,6 +28,7 @@ import 'package:redux_todolist/page/material/expansion_demo/expansion_panel_list
 import 'package:redux_todolist/page/material/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/material/frosted_glass_demo.dart';
 import 'package:redux_todolist/page/material/sliver_demo.dart';
+import 'package:redux_todolist/page/splash_screen.dart';
 import 'package:redux_todolist/page/third_party/intro_slider_demo.dart';
 import 'package:redux_todolist/page/third_party/intro_view_demo.dart';
 import 'package:redux_todolist/page/material/overlay_demo.dart';
@@ -341,6 +342,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'Spinkit':
         push(Spinkit());
+        break;
+      case 'SplashScreen':
+        push(SplashScreen());
         break;
 
       default:

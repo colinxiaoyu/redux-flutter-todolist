@@ -179,6 +179,15 @@ class TodoList {
       isDone: true,
       todo: ['OverlayDemo', 'OverlayDemo2'],
     ),
+    ToDoState(
+      uniqueId: '13',
+      title: 'SplashScreen',
+      desc: 'SplashScreen 淡出动画',
+      isDone: true,
+      todo: ['SplashScreen', ],
+    ),
+
+
   ];
 
   TodoList({this.list});
