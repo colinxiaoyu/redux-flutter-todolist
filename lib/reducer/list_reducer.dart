@@ -188,7 +188,7 @@ class TodoList {
       title: '普通组件 Common SplashScreen Focus 等基础的小例子',
       desc: 'SplashScreen 淡出动画 ，Focus 的获取与失去',
       isDone: true,
-      todo: ['SplashScreen', 'TextFieldFocusDemo','WrapDemo'],
+      todo: ['SplashScreen', 'TextFieldFocusDemo','WrapDemo','WillPopScopeDemo'],
     ),
   ];
 
