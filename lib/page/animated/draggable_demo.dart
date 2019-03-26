@@ -12,6 +12,9 @@ class _DraggableDemoState extends State<DraggableDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('DraggableDemo'),
+      ),
         body: Stack(
       children: <Widget>[
         DraggableWidget(
