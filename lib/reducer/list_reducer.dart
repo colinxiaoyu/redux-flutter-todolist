@@ -185,10 +185,10 @@ class TodoList {
     ),
     ToDoState(
       uniqueId: '13',
-      title: 'SplashScreen Focus 等基础的小例子',
+      title: '普通组件 Common SplashScreen Focus 等基础的小例子',
       desc: 'SplashScreen 淡出动画 ，Focus 的获取与失去',
       isDone: true,
-      todo: ['SplashScreen', 'TextFieldFocusDemo'],
+      todo: ['SplashScreen', 'TextFieldFocusDemo','WrapDemo'],
     ),
   ];
 

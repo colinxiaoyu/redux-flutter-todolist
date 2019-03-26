@@ -455,6 +455,16 @@ A widget that aligns its child within itself and optionally sizes itself based o
 
 ## flutter 布局学习
 
+### Wrap
+- direction = Axis.horizontal,
+- alignment = WrapAlignment.start,
+- spacing = 0.0： 主轴间隔，如果为 Axis.horizontal，则是横向间隔
+- runAlignment = WrapAlignment.start,
+- runSpacing = 0.0： 辅轴间隔，如果为 Axis.horizontal，则是纵向间隔
+- crossAxisAlignment = WrapCrossAlignment.start,
+- textDirection,
+- verticalDirection = VerticalDirection.down,
+
 ### Flexible extends ParentDataWidget<Flex>
 作用与 Expanded 一样 
 但 Flexible 有fit 属性 默认为 fit = FlexFit.loose

@@ -16,6 +16,7 @@ import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_ali
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
 import 'package:redux_todolist/page/common/textfields_focus_demo.dart';
 import 'package:redux_todolist/page/common/tool_tips_demo.dart';
+import 'package:redux_todolist/page/common/wrap_demo.dart';
 import 'package:redux_todolist/page/cupertino/action_sheet_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_navigation_bar_demo.dart';
 import 'package:redux_todolist/page/cupertino/cupertino_picker_demo.dart';
@@ -366,7 +367,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'EmailLauncherDemo':
         push(EmailLauncherDemo());
         break;
-
+      case 'WrapDemo':
+        push(WrapDemo());
+        break;
 
       default:
         break;
