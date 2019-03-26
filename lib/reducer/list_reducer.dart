@@ -146,11 +146,14 @@ class TodoList {
           ' intro_slider: ^1.1.9  Spinkit小UI动画 超炫的动画效果 ',
       isDone: true,
       todo: [
-        'IntroViewDemo','SliderScreen','Spinkit',
+        'IntroViewDemo',
+        'SliderScreen',
+        'Spinkit',
+        'UrlLauncherDemo',
+        'TelAndSMSDemo',
+        'EmailLauncherDemo',
       ],
     ),
-
-
     ToDoState(
       uniqueId: '10',
       title: 'KeepAlive',
@@ -184,11 +187,8 @@ class TodoList {
       title: 'SplashScreen Focus 等基础的小例子',
       desc: 'SplashScreen 淡出动画 ，Focus 的获取与失去',
       isDone: true,
-      todo: ['SplashScreen','TextFieldFocusDemo' ],
+      todo: ['SplashScreen', 'TextFieldFocusDemo'],
     ),
-
-
-
   ];
 
   TodoList({this.list});

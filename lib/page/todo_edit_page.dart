@@ -45,6 +45,9 @@ import 'package:redux_todolist/page/state/keep_alive_demo.dart';
 import 'package:redux_todolist/page/stream/im_page.dart';
 import 'package:redux_todolist/page/stream/simple_stream_page.dart';
 import 'package:redux_todolist/page/third_party/spinkit_demo.dart';
+import 'package:redux_todolist/page/third_party/url_launcher/browser_and_webview_demo.dart';
+import 'package:redux_todolist/page/third_party/url_launcher/email_demo.dart';
+import 'package:redux_todolist/page/third_party/url_launcher/tel_and_sms_demo.dart';
 import 'package:redux_todolist/reducer/app_reducer.dart';
 import 'package:redux_todolist/reducer/list_reducer.dart';
 
@@ -354,6 +357,16 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'ToolTipDemo':
         push(ToolTipDemo());
         break;
+      case 'UrlLauncherDemo':
+        push(UrlLauncherDemo());
+        break;
+      case 'TelAndSMSDemo':
+        push(TelAndSMSDemo());
+        break;
+      case 'EmailLauncherDemo':
+        push(EmailLauncherDemo());
+        break;
+
 
       default:
         break;
