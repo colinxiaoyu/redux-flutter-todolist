@@ -180,7 +180,7 @@ class TodoList {
       title: 'OverlayDemo',
       desc: 'Overla 相关API 以及注意事项',
       isDone: true,
-      todo: ['OverlayDemo', 'OverlayDemo2'],
+      todo: ['OverlayDemo', 'OverlayDemo2','OverlayDemo3'],
     ),
     ToDoState(
       uniqueId: '13',

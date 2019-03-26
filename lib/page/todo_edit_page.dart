@@ -32,6 +32,7 @@ import 'package:redux_todolist/page/material/chip_page.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_panel_list.dart';
 import 'package:redux_todolist/page/material/expansion_demo/expansion_tile.dart';
 import 'package:redux_todolist/page/material/frosted_glass_demo.dart';
+import 'package:redux_todolist/page/material/overlay_demo3.dart';
 import 'package:redux_todolist/page/material/sliver_demo.dart';
 import 'package:redux_todolist/page/common/splash_screen.dart';
 import 'package:redux_todolist/page/third_party/intro_slider_demo.dart';
@@ -308,6 +309,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
         break;
       case 'OverlayDemo2':
         push(OverlayDemo2());
+        break;
+      case 'OverlayDemo3':
+        push(OverlayDemo3());
         break;
       case 'PullOnLoading':
         push(PullOnLoading());

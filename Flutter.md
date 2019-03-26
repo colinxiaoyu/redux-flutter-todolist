@@ -974,7 +974,8 @@ Useful for attaching a key to an existing widget.
 - @required child
  
 ### Material
-A piece of material.修饰性组件，给子组件赋予一些属性
+A piece of material.修饰性组件，给子组件赋予一些属性，
+注意：有时可能会遇到 文字变形等与主样式 不一致的问题，可用 Material 包裹解决
 - type = MaterialType.canvas, `The kind of material to show (e.g., card or canvas). This
 affects the shape of the widget, the roundness of its corners if
 the shape is rectangular, and the default color.`
