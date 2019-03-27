@@ -411,6 +411,9 @@ A widget that aligns its child within itself and optionally sizes itself based o
 - gaplessPlayback = false,当ImageProvider发生变化后，重新加载图片的过程中，原图片的展示是否保留。若值为true，保留，若为false，不保留，直接空白等待下一张图片加载。
 - filterQuality = FilterQuality.low,图片质量
 
+### FadeInImage
+在 Image 基础上 加入淡入淡出动画
+
 ### BlendMode enum
 颜色与图片不同的组合方式 28 种
 - clear,Drop both the source and destination images, leaving nothing.![](https://flutter.github.io/assets-for-api-docs/assets/dart-ui/blend_mode_clear.png)
@@ -773,6 +776,8 @@ onHorizontalDragStart ：与接触屏幕，可能开始水平移动
 onVerticalDragUpdate：与屏幕接触并水平移动的指针在水平方向上移动
 onVerticalDragEnd ：先前与屏幕接触并且水平移动的指针不再与屏幕接触，并且当它停止接触屏幕时以特定速度移动
 
+### InkWell extends InkResponse
+InkResponse 对 GestureDetector 再封装，使它具有 Material 的效果
 
 ### MaterialButton
 - @required onPressed,
