@@ -16,6 +16,7 @@ import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_keep_ali
 import 'package:redux_todolist/page/bottom_navigation/bottom_navigation_widget.dart';
 import 'package:redux_todolist/page/common/form_pop_demo.dart';
 import 'package:redux_todolist/page/common/multi_touch_page.dart';
+import 'package:redux_todolist/page/common/notification_page.dart';
 import 'package:redux_todolist/page/common/textfields_focus_demo.dart';
 import 'package:redux_todolist/page/common/tool_tips_demo.dart';
 import 'package:redux_todolist/page/common/will_pop_scpoe_demo.dart';
@@ -386,7 +387,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
       case 'MultiTouchPage':
         push(MultiTouchPage());
         break;
-
+      case 'NotificationPage':
+        push(NotificationPage());
+        break;
       default:
         break;
     }

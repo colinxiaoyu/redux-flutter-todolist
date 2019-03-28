@@ -186,7 +186,7 @@ class TodoList {
       uniqueId: '13',
       title: '普通组件 Common SplashScreen Focus 等基础的小例子',
       desc: '1、SplashScreen 淡出动画 ，2、Focus 的获取与失去，3、拦截退出操作'
-          '4、图片多点触控',
+          '4、图片多点触控 ,5、利用 Notification 从下往上传递数据',
       isDone: true,
       todo: [
         'SplashScreen',
@@ -194,7 +194,8 @@ class TodoList {
         'WrapDemo',
         'WillPopScopeDemo',
         'FormPopDemo',
-        'MultiTouchPage'
+        'MultiTouchPage',
+        'NotificationPage'
       ],
     ),
   ];
