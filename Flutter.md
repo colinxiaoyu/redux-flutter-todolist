@@ -842,15 +842,25 @@ An end-aligned row of buttons.
         )
 ```
 
+## Flutter 动画相关
+### Animation
+动画系统的主要构建块是Animation类。动画表示可以在动画生命周期内改变的特定类型的值。
+执行动画的大多数控件都会接收一个Animation对象作为参数，从中读取动画的当前值，并监听对象对该值的更改。
+An animation with a value of type `T`.
+- animation.value 动画当前的值，动画就是用 value 来描述一系列的动作
+- animation.status
+- animation.addListener
+每当动画的值更改时，动画通知所有添加了addListener的监听器。通常，监听动画的State对象将在其监听器回调中调用setState，以通过动画的新值向控件系统通知其需要重构。
+- animation.addStatusListener
+监听AnimationStatus 的 4种状态 dismissed,  forward,  reverse,  completed,
+  
+
 
 
 ### AnimationController extends Animation<double> with AnimationEagerListenerMixin, AnimationLocalListenersMixin, AnimationLocalStatusListenersMixin
 https://www.jianshu.com/p/0a40e04ab9fa 源码分析 讲的不错
-
-### AnimatedBuilder extends 
-`AnimatedWidget > StatefulWidget`
-A general-purpose widget for building animations.注意在 widget 生命周期结束时销毁
-- Listenable animation：动画控制器，控制动画如何执行
+要创建动画，首先创建一个AnimationController。除了作为动画本身，AnimationController可以让您控制动画。例如，您可以告诉控制器forward（向前播放）或stop（停止）动画。您还可以fling（投掷）动画，其使用诸如弹簧的物理模拟来驱动动画。
+创建动画控制器后，就可以基于它开始构建其他动画。例如，可以创建一个ReverseAnimation，反映原始动画，但反向运行（比如从1.0到0.0）。类似地，还可以创建一个CurvedAnimation，曲线动画，其值由curve调整。
 ```
 AnimationController(
       duration: const Duration(seconds: 10),
@@ -866,9 +876,41 @@ _animationController = AnimationController(
         CurvedAnimation(parent: _animationController,
             curve: Curves.fastOutSlowIn));
 ```
+
+
+### AnimatedBuilder extends 
+`AnimatedWidget > StatefulWidget`
+A general-purpose widget for building animations.注意在 widget 生命周期结束时销毁
+- Listenable animation：动画控制器，控制动画如何执行
+
 - @required (TransitionBuilder)builder：builder(context, child):
 Called every time the animation changes value.每一帧动画重新调用
 - child:供 builder 方法调用，描述 builder 内部组件
+
+### Tween
+A linear interpolation between a beginning and ending value.
+动画在0.0到1.0的区间，可以使用Tween，它在其begin（开始）和end（结束）值之间进行插值。许多类型具有特定的Tween子类，提供类型特定的插值。
+例如， ColorTween在颜色之间进行插值，并在矩形之间插入RectTween。您可以通过创建自己的Tween子类并覆盖其lerp函数来定义自己的插值。
+补间只是定义了如何在两个值之间插值。要获取动画当前帧的具体值，您还需要一个动画来确定当前状态。将补间动画与动画结合起来有两种方法，获得一个具体的值：
+使用evaluate获取动画当前值的补间。这个方法对于已经在监听动画的控件最为有用，因此每当动画改变值时重建。
+使用animate为补间动画添加动画。而不是返回单个值，animate函数返回一个包含补间的新动画。当您想要将新创建的动画提供给另一个控件时，此方法最为有用，然后可以读取包含补间的当前值以及监听对值的更改。
+ ```
+ _animation = _controller.drive(
+   Tween<Offset>(
+     begin: const Offset(100.0, 50.0),
+     end: const Offset(200.0, 300.0),
+   ),
+ );
+```
+```
+ _animation = Tween<Offset>(
+   begin: const Offset(100.0, 50.0),
+   end: const Offset(200.0, 300.0),
+ ).animate(_controller);
+```
+
+实现类：EdgeInsetsTween extends Tween 
+BorderRadiusTween 等
 
 ### Flutter 封装的几种动画
 - FadeTransition  透明度变化

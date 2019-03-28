@@ -161,6 +161,7 @@ class _AnimationPageState extends State<AnimationPage>
   }
 }
 
+///透明度变化
 class OpacityAniWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -174,35 +175,9 @@ class _OpacityAniWidgetState extends State<OpacityAniWidget>
 
   Animation<double> opacity;
 
-  void _initController() {
-    _controller = AnimationController(
-      duration: Duration(milliseconds: 2000),
-      vsync: this,
-    );
-  }
+  void _initAni() {}
 
-  void _initAni() {
-    opacity = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Interval(
-          0.0,
-          0.5,
-          curve: Curves.easeIn,
-        ),
-      ),
-    )
-      ..addListener(() {
-        setState(() {});
-      })
-      ..addStatusListener((AnimationStatus status) {
-        print(status);
-      });
-  }
-
+  /// 用 _controller 控制动画的状态(即 Animation opacity.value的值变化)
   Future _startAnimation() async {
     try {
       await _controller.repeat();
@@ -221,8 +196,29 @@ class _OpacityAniWidgetState extends State<OpacityAniWidget>
   @override
   void initState() {
     super.initState();
-    _initController();
-    _initAni();
+    _controller = AnimationController(
+      duration: Duration(milliseconds: 2000),
+      vsync: this,
+    );
+    opacity = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Interval(
+          0.0,
+          0.9,
+          curve: Curves.easeIn,
+        ),
+      ),
+    )
+      ..addListener(() {
+        setState(() {});
+      })
+      ..addStatusListener((AnimationStatus status) {
+        print(status);
+      });
     _startAnimation();
   }
 
@@ -903,8 +899,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         new Padding(
-          padding:
-          const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+          padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
           child: new FlatButton(
               textColor: Colors.black,
               child: new Text('replay staggered'),
