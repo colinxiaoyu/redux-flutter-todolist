@@ -306,7 +306,6 @@ The style in which to draw a text decoration
 Holds a 2D floating-point size.
 - width 
 - height
-
 ### OffsetBase  abstract
 Base class for [Size] and [Offset], which are both ways to describe a distance as a two-dimensional axis-aligned vector.
 
@@ -333,6 +332,9 @@ A widget that aligns its child within itself and optionally sizes itself based o
 - bottomLeft:Alignment(-1.0, 1.0);
 - bottomCenter:Alignment(0.0, 1.0);
 - bottomRight:Alignment(1.0, 1.0);
+
+### FractionalOffset extends Alignment
+即在 Alignment 基础上所有坐标点上加 1.0
 
 ### BoxDecoration extends Decoration
  An immutable description of how to paint a box.
