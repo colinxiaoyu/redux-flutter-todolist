@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_todolist/page/animated/animation_page.dart';
 import 'package:redux_todolist/page/animated/custom-route.dart';
 import 'package:redux_todolist/page/animated/draggable_demo.dart';
 import 'package:redux_todolist/page/animated/hero_basic_structure.dart';
@@ -239,6 +240,9 @@ class _TodoEditPageState extends State<TodoEditPage> {
     switch (todo) {
       case 'AnimatedContainerDemo':
         push(AnimatedContainerDemo());
+        break;
+      case 'AnimationPage':
+        push(AnimationPage());
         break;
       case 'AnimatedCrossFadeDemo':
         push(AnimatedCrossFadeDemo());

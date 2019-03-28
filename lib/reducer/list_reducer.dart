@@ -33,7 +33,7 @@ class TodoList {
       title: 'AnimatedContainerDemo',
       desc: '基础动画',
       isDone: true,
-      todo: ['AnimatedContainerDemo'],
+      todo: ['AnimatedContainerDemo','AnimationPage'],
     ),
     ToDoState(
       uniqueId: '1',
